@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>{D07A56DC-86BC-4979-AFA2-8252836DA18D}</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>gigIt.Xamarin</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)App\App.xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)App\App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)App\Views\BloomView.xaml.cs">
+      <DependentUpon>BloomView.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Base\AspectViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Base\BaseView.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Aspects\Sparks\Models\Spark.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)App\Models\ShellViewItem.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Resources\gigItColors.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Resources\gigItIconButton.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Resources\gigItIconLabel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Resources\gigItIcons.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Resources\gigItIconSource.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\IDataStore.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\Mocks\MockSparksStore.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Aspects\Skills\ViewModels\SkillsViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Base\BaseViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Aspects\Sparks\ViewModels\SparkDetailViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Aspects\Sparks\ViewModels\SparksViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Aspects\Skills\Views\SkillsView.xaml.cs">
+      <DependentUpon>SkillsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Aspects\Sparks\Views\SparkDetailPage.xaml.cs">
+      <DependentUpon>SparkDetailPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Aspects\Sparks\Views\SparksView.xaml.cs">
+      <DependentUpon>SparksView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Aspects\Sparks\Views\NewSparkPage.xaml.cs">
+      <DependentUpon>NewSparkPage.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Aspects\Skills\Views\SkillsView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Aspects\Sparks\Views\SparkDetailPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Aspects\Sparks\Views\SparksView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Aspects\Sparks\Views\NewSparkPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="$(MSBuildThisFileDirectory)App\ViewModels\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Aspects\Gigs\ViewModels\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Aspects\Gigs\Views\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Aspects\Market\ViewModels\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Aspects\Market\Views\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Aspects\People\ViewModels\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Aspects\People\Views\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Aspects\Skills\ViewModels\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Aspects\Skills\Views\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Aspects\Sparks\Models\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Aspects\Sparks\Views\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Aspects\Sparks\ViewModels\" />
+    <Folder Include="$(MSBuildThisFileDirectory).recycle\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Services\Mocks\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)App\Views\BloomView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+</Project>

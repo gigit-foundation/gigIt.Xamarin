@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:r="clr-namespace:gigIt.Xamarin.Resources"
+             xmlns:g="clr-namespace:gigIt.Xamarin"
+             x:Class="gigIt.Xamarin.App.Views.BloomView">
+    <ContentView.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <r:gigItIconButton x:Name="btnSparks" BackgroundColor="Transparent"
+                               IsVisible="{Binding IsOpen}" VerticalOptions="Center" HorizontalOptions="Center"
+                               Text="{Static g:gigItIcons.Spark}" FontSize="{Binding IconSize}"
+                               TextColor="{Static g:gigItColors.gigitSpark}" BorderColor="{Static g:gigItColors.gigitSpark}"/>
+            <r:gigItIconButton x:Name="btnSkills" BackgroundColor="Transparent"
+                               IsVisible="{Binding IsOpen}" VerticalOptions="Center" HorizontalOptions="Center"
+                               Text="{Static g:gigItIcons.Skills}" FontSize="{Binding IconSize}"
+                               TextColor="{Static g:gigItColors.gigitWater}" BorderColor="{Static g:gigItColors.gigitWater}"/>
+            <r:gigItIconButton x:Name="btnPeople" BackgroundColor="Transparent"
+                               IsVisible="{Binding IsOpen}" VerticalOptions="Center" HorizontalOptions="Center"
+                               Text="{Static g:gigItIcons.Actors}" FontSize="{Binding IconSize}"
+                               TextColor="{Static g:gigItColors.gigitLife}" BorderColor="{Static g:gigItColors.gigitLife}"/>
+            <r:gigItIconButton x:Name="btnWork" BackgroundColor="Transparent"
+                               IsVisible="{Binding IsOpen}" VerticalOptions="Center" HorizontalOptions="Center"
+                               Text="{Static g:gigItIcons.Work}" FontSize="{Binding IconSize}"
+                               TextColor="{Static g:gigItColors.gigitEarth}" BorderColor="{Static g:gigItColors.gigitEarth}"/>
+            <r:gigItIconButton x:Name="btnMarket" BackgroundColor="Transparent"
+                               IsVisible="{Binding IsOpen}" VerticalOptions="Center" HorizontalOptions="Center"
+                               Text="{Static g:gigItIcons.Market}" FontSize="{Binding IconSize}"
+                               TextColor="{Static g:gigItColors.gigitSky}" BorderColor="{Static g:gigItColors.gigitSky}"/>
+            <r:gigItIconButton x:Name="btnBloom" BackgroundColor="Transparent"
+                               VerticalOptions="Center" HorizontalOptions="Center"
+                               Text="{Static g:gigItIcons.Gigit}" FontSize="64" Clicked="ToggleBloom"
+                               TextColor="{Static g:gigItColors.bodyFG}"/>
+        </Grid>
+    </ContentView.Content>
+</ContentView>
