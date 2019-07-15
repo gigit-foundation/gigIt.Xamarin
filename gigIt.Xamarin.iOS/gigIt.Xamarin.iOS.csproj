@@ -135,17 +135,19 @@
     <Reference Include="Xamarin.iOS" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="SlideOverKit">
-      <Version>2.1.6.2</Version>
+    <PackageReference Include="MvvmCross.Forms">
+      <Version>6.3.1</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.Forms" Version="4.1.0.581479" />
-    <PackageReference Include="Xamarin.Forms.RadialMenu">
-      <Version>2.0.0</Version>
-    </PackageReference>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Custom\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\gigIt.Xamarin.Forms\gigIt.Xamarin.Forms.csproj">
+      <Project>{e2bdb86a-64a8-4bd5-9d77-627e363a3e31}</Project>
+      <Name>gigIt.Xamarin.Forms</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
-  <Import Project="..\gigIt.Xamarin\gigIt.Xamarin.projitems" Label="Shared" />
 </Project>

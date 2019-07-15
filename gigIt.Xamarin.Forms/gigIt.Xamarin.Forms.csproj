@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <Import Project="..\gigIt.Xamarin\gigIt.Xamarin.projitems" Label="Shared" />
+
+  <ItemGroup>
+    <PackageReference Include="MvvmCross.Forms" Version="6.3.1" />
+    <PackageReference Include="Xamarin.Forms" Version="4.1.0.581479" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="D:\Source\alcheByte\gigIt\gigIt.Xamarin\gigIt.Xamarin\App\App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+
+</Project>
