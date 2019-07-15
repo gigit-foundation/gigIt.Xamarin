@@ -13,7 +13,7 @@ namespace gigIt.Xamarin.Views
     {
         SkillsViewModel viewModel;
 
-        public SkillsView(ShellViewItem si) : base(si)
+        public SkillsView(AspectViewItem si) : base(si)
         {
             BindingContext = viewModel = new SkillsViewModel(si);
 

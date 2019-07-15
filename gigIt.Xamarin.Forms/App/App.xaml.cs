@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -14,25 +15,24 @@ namespace gigIt.Xamarin
 {
     public partial class TheApp : Application
     {
-        public List<ShellViewItem> ShellViews { get; }
-        public Dictionary<int, Lazy<NavigationPage>> ShellPages { get; } = new Dictionary<int, Lazy<NavigationPage>>();
-        //public NavigationPage RootPage { get; private set; }
-
-        private int currentPage = 1;
+        public List<AspectViewItem> AspectViews { get; }
+        public Dictionary<int, Lazy<NavigationPage>> AspectPages { get; } = new Dictionary<int, Lazy<NavigationPage>>();
+        public AspectViewItem CurrentAspect { get; private set; }
 
         public TheApp()
         {
-            var items = new ShellViewItem[]
+            var items = new AspectViewItem[]
             {
-                new ShellViewItem(1, gigItIcons.Ideas,  "Sparks", gigItColors.gigitSpark, (si) => new SparksView(si)),
-                new ShellViewItem(2, gigItIcons.Skills, "Skills", gigItColors.gigitWater, (si) => new SkillsView(si)),
-                new ShellViewItem(3, gigItIcons.Skills, "People", gigItColors.gigitLife,  (si) => new PeopleView(si)),
-                new ShellViewItem(4, gigItIcons.Skills, "Gigs",   gigItColors.gigitEarth, (si) => new GigsView(si)),
-                new ShellViewItem(5, gigItIcons.Skills, "Market", gigItColors.gigitSky,   (si) => new MarketView(si)),
+                new AspectViewItem(1, gigItIcons.Spark,  "Sparks", gigItColors.gigitSpark, (si) => new SparksView(si)),
+                new AspectViewItem(2, gigItIcons.Skills, "Skills", gigItColors.gigitWater, (si) => new SkillsView(si)),
+                new AspectViewItem(3, gigItIcons.Actors, "People", gigItColors.gigitLife,  (si) => new PeopleView(si)),
+                new AspectViewItem(4, gigItIcons.Work,   "Gigs",   gigItColors.gigitEarth, (si) => new GigsView(si)),
+                new AspectViewItem(5, gigItIcons.Market, "Market", gigItColors.gigitSky,   (si) => new MarketView(si)),
             };
-            ShellViews = items.ToList();
+            AspectViews = items.ToList();
+            CurrentAspect = AspectViews.First();
 
-            foreach(var item in ShellViews)
+            foreach (var item in AspectViews)
             {
                 // lazy load as needed
                 var page = new Lazy<NavigationPage>(() =>
@@ -44,22 +44,31 @@ namespace gigIt.Xamarin
                     return p;
                 });
 
-                ShellPages.Add(item.Id, page);
+                AspectPages.Add(item.Id, page);
             }
 
             InitializeComponent();
 
             // load the intial page
-            MainPage = /*RootPage =*/ ShellPages[1].Value;
+            MainPage = AspectPages[1].Value;
         }
 
-        public async void NavigateToAspect(int id)
+        public async Task<AspectViewItem> NavigateToAspect(int id)
         {
-            if (currentPage == id) return;
-            var page = ShellPages[id].Value;
-            currentPage = id;
-            if (id == 1) await MainPage.Navigation.PopToRootAsync();
-            else await MainPage.Navigation.PushModalAsync(page);
+            if (CurrentAspect.Id != id)
+            {
+                var page = AspectPages[id].Value;
+                CurrentAspect = AspectViews.First((av) => av.Id == id);
+                if (id == 1) await MainPage.Navigation.PopToRootAsync(false);
+                else
+                {
+                    var lastPage = MainPage.Navigation.NavigationStack.LastOrDefault();
+                    await MainPage.Navigation.PushAsync(page, false);
+                    if (MainPage.Navigation.NavigationStack.Count > 2)
+                        MainPage.Navigation.RemovePage(lastPage);
+                }
+            }
+            return CurrentAspect;
         }
 
         protected override void OnStart()

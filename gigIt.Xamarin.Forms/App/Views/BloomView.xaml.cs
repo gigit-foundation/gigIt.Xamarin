@@ -9,6 +9,8 @@ using System.Windows.Input;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
+using gigIt.Xamarin.Models;
+
 namespace gigIt.Xamarin.App.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
@@ -26,6 +28,8 @@ namespace gigIt.Xamarin.App.Views
             NavToMarket = new Command(() => NavToAspect(5));
 
             BindingContext = this;
+
+            CurrentAspect = (Application.Current as TheApp).CurrentAspect;
 
             InitializeComponent();
         }
@@ -62,6 +66,13 @@ namespace gigIt.Xamarin.App.Views
             set { SetProperty(ref iconSize, value); }
         }
 
+        AspectViewItem currentAspect = null;
+        public AspectViewItem CurrentAspect
+        {
+            get { return currentAspect; }
+            set { SetProperty(ref currentAspect, value); }
+        }
+
         async void StartBloom()
         {
             if (IsOpen) return;
@@ -70,8 +81,6 @@ namespace gigIt.Xamarin.App.Views
             //this.BackgroundColor = Color.FromHex("44111111");
             await Task.WhenAll(new Task[]
             {
-                // slide the whole thing up
-                this.TranslateTo(0, -70, 200, Easing.SpringOut),
                 // scale buttons up to 1
                 btnSparks.ScaleTo(1, 100, Easing.CubicInOut),
                 btnSkills.ScaleTo(1, 100, Easing.CubicInOut),
@@ -86,6 +95,8 @@ namespace gigIt.Xamarin.App.Views
                 btnMarket.TranslateTo(-66.574, -21.6312, 100, Easing.CubicInOut),
                 // make center smaller and move it up
                 btnBloom.ScaleTo(0.65, 100, Easing.SpringOut),
+                // slide the whole thing up
+                this.TranslateTo(0, -70, 200, Easing.SpringOut),
             });
 
         }
@@ -96,8 +107,6 @@ namespace gigIt.Xamarin.App.Views
 
             await Task.WhenAll(new Task[]
             {
-                // slide the whole thing back down
-                this.TranslateTo(0, 0, 200, Easing.SpringIn),
                 // recenter
                 btnSparks.TranslateTo(0, 0, 100, Easing.CubicInOut),
                 btnSkills.TranslateTo(0, 0, 100, Easing.CubicInOut),
@@ -112,25 +121,23 @@ namespace gigIt.Xamarin.App.Views
                 btnMarket.ScaleTo(0.1, 100, Easing.CubicInOut),
                 // reset main button
                 btnBloom.ScaleTo(1, 100, Easing.SpringIn),
+                // slide the whole thing back down
+                this.TranslateTo(0, 0, 200, Easing.SpringIn),
             });
 
             IsOpen = false;
         }
 
-        void NavToAspect(int sid)
+        async void NavToAspect(int sid)
         {
-            (Application.Current as TheApp).NavigateToAspect(sid);
+            StartWilt();
+            CurrentAspect = await (Application.Current as TheApp).NavigateToAspect(sid);
         }
 
         private void ToggleBloom(object sender, EventArgs e)
         {
             if (IsOpen) StartWilt();
             else StartBloom();
-        }
-
-        private void BtnSkills_Clicked(object sender, EventArgs e)
-        {
-            (Application.Current as TheApp).NavigateToAspect(1);
         }
     }
 }

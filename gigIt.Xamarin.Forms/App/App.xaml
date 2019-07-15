@@ -47,7 +47,7 @@
                         Command="{Binding ShowMenu}"
                         Grid.Column="0" Grid.Row="0"/>
                     <Label Text="{Binding Aspect.Title}" 
-                        VerticalTextAlignment="Center" HorizontalTextAlignment="Center"
+                        VerticalTextAlignment="Center" HorizontalTextAlignment="Start"
                         FontSize="Large" TextColor="{Binding Aspect.TitleColor}"
                         Grid.Column="1" Grid.Row="0"/>
                     <ContentPresenter  BackgroundColor="{Static g:gigItColors.bodyBG}" 
@@ -55,7 +55,7 @@
                         Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="3"/>
                     <v:BloomView VerticalOptions="End" HorizontalOptions="Center"
                                  BackgroundColor="Transparent"
-                                 Grid.ColumnSpan="3" Grid.RowSpan="2" Padding="10"/>
+                                 Grid.ColumnSpan="3" Grid.RowSpan="2"/>
                 </Grid>
             </ControlTemplate>
         </ResourceDictionary>

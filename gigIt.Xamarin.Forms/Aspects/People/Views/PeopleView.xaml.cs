@@ -13,7 +13,7 @@ namespace gigIt.Xamarin.Views
     {
         PeopleViewModel viewModel;
 
-        public PeopleView(ShellViewItem si) : base(si)
+        public PeopleView(AspectViewItem si) : base(si)
         {
             BindingContext = viewModel = new PeopleViewModel(si);
 

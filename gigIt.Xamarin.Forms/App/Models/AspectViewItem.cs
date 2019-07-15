@@ -6,9 +6,9 @@ using Xamarin.Forms;
 
 namespace gigIt.Xamarin.Models
 {
-    public class ShellViewItem
+    public class AspectViewItem
     {
-        public ShellViewItem(int id, string icon, string title, Color titleColor, Func<ShellViewItem, BaseView> viewCreate)
+        public AspectViewItem(int id, string icon, string title, Color titleColor, Func<AspectViewItem, BaseView> viewCreate)
         {
             Id = id;
             IconGlyph = icon;
@@ -21,6 +21,6 @@ namespace gigIt.Xamarin.Models
         public string IconGlyph { get; private set; }
         public string Title { get; private set; }
         public Color TitleColor { get; private set; }
-        public Func<ShellViewItem, BaseView> CreateView { get; set; }
+        public Func<AspectViewItem, BaseView> CreateView { get; set; }
     }
 }

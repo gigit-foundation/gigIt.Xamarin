@@ -18,7 +18,7 @@ namespace gigIt.Xamarin.ViewModels
         public ObservableCollection<Spark> Items { get; set; }
         public Command LoadItemsCommand { get; set; }
 
-        public SparksViewModel(ShellViewItem si) : base(si)
+        public SparksViewModel(AspectViewItem si) : base(si)
         {
             Items = new ObservableCollection<Spark>();
             LoadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand());

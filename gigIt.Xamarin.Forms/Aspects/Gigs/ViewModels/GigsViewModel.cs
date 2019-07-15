@@ -10,7 +10,7 @@ namespace gigIt.Xamarin.ViewModels
     {
         //public IDataStore<Gigs> DataStore => DependencyService.Get<IDataStore<Gigs>>() ?? new MockGigsStore();
 
-        public GigsViewModel(ShellViewItem si) : base(si)
+        public GigsViewModel(AspectViewItem si) : base(si)
         {
         }
     }

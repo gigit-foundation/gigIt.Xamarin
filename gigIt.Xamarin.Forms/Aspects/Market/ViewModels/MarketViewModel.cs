@@ -10,7 +10,7 @@ namespace gigIt.Xamarin.ViewModels
     {
         //public IDataStore<Market> DataStore => DependencyService.Get<IDataStore<Market>>() ?? new MockMarketStore();
 
-        public MarketViewModel(ShellViewItem si) : base(si)
+        public MarketViewModel(AspectViewItem si) : base(si)
         {
         }
     }

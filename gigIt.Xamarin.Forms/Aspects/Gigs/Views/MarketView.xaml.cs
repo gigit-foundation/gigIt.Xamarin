@@ -13,7 +13,7 @@ namespace gigIt.Xamarin.Views
     {
         GigsViewModel viewModel;
 
-        public GigsView(ShellViewItem si) : base(si)
+        public GigsView(AspectViewItem si) : base(si)
         {
             BindingContext = viewModel = new GigsViewModel(si);
 

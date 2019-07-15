@@ -10,7 +10,7 @@ namespace gigIt.Xamarin.ViewModels
     {
         //public IDataStore<People> DataStore => DependencyService.Get<IDataStore<People>>() ?? new MockPeopleStore();
 
-        public PeopleViewModel(ShellViewItem si) : base(si)
+        public PeopleViewModel(AspectViewItem si) : base(si)
         {
         }
     }

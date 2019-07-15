@@ -11,40 +11,40 @@
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
             <r:gigItIconButton x:Name="btnSparks" BackgroundColor="{Static g:gigItColors.headerBG}"
-                               IsVisible="{Binding IsOpen}" InputTransparent="False"
+                               IsVisible="{Binding IsOpen}"
                                Text="{Static g:gigItIcons.Spark}" FontSize="{Binding IconSize}"
                                TextColor="{Static g:gigItColors.gigitSpark}"
                                HeightRequest="70" WidthRequest="70" CornerRadius="35"
                                Command="{Binding NavToSparks}"/>
             <r:gigItIconButton x:Name="btnSkills" BackgroundColor="{Static g:gigItColors.headerBG}"
-                               IsVisible="{Binding IsOpen}" InputTransparent="False"
+                               IsVisible="{Binding IsOpen}"
                                Text="{Static g:gigItIcons.Skills}" FontSize="{Binding IconSize}"
                                TextColor="{Static g:gigItColors.gigitWater}"
                                HeightRequest="70" WidthRequest="70" CornerRadius="35"
                                Command="{Binding NavToSkills}"/>
             <r:gigItIconButton x:Name="btnPeople" BackgroundColor="{Static g:gigItColors.headerBG}"
-                               IsVisible="{Binding IsOpen}" InputTransparent="False"
+                               IsVisible="{Binding IsOpen}"
                                Text="{Static g:gigItIcons.Actors}" FontSize="{Binding IconSize}"
                                TextColor="{Static g:gigItColors.gigitLife}"
                                HeightRequest="70" WidthRequest="70" CornerRadius="35"
                                Command="{Binding NavToPeople}"/>
             <r:gigItIconButton x:Name="btnWork" BackgroundColor="{Static g:gigItColors.headerBG}"
-                               IsVisible="{Binding IsOpen}" InputTransparent="False"
+                               IsVisible="{Binding IsOpen}"
                                Text="{Static g:gigItIcons.Work}" FontSize="{Binding IconSize}"
                                TextColor="{Static g:gigItColors.gigitEarth}"
                                HeightRequest="70" WidthRequest="70" CornerRadius="35"
                                Command="{Binding NavToWork}"/>
             <r:gigItIconButton x:Name="btnMarket" BackgroundColor="{Static g:gigItColors.headerBG}"
-                               IsVisible="{Binding IsOpen}" InputTransparent="False"
+                               IsVisible="{Binding IsOpen}"
                                Text="{Static g:gigItIcons.Market}" FontSize="{Binding IconSize}"
                                TextColor="{Static g:gigItColors.gigitSky}"
                                HeightRequest="70" WidthRequest="70" CornerRadius="35"
                                Command="{Binding NavToMarket}"/>
             <r:gigItIconButton x:Name="btnBloom" BackgroundColor="{Static g:gigItColors.headerBG}"
                                Text="{Static g:gigItIcons.Gigit}" FontSize="64"
-                               TextColor="{Static g:gigItColors.bodyFG}"
+                               TextColor="{Binding CurrentAspect.TitleColor}"
                                HeightRequest="100" WidthRequest="100" CornerRadius="50"
-                               Clicked="ToggleBloom" InputTransparent="False"/>
+                               Clicked="ToggleBloom"/>
         </Grid>
     </ContentView.Content>
 </ContentView>

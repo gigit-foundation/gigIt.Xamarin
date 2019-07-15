@@ -13,7 +13,7 @@ namespace gigIt.Xamarin.Views
     {
         MarketViewModel viewModel;
 
-        public MarketView(ShellViewItem si) : base(si)
+        public MarketView(AspectViewItem si) : base(si)
         {
             BindingContext = viewModel = new MarketViewModel(si);
 

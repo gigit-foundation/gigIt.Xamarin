@@ -8,12 +8,12 @@ namespace gigIt.Xamarin.Views
 {
     public class AspectView : BaseView
     {
-        public AspectView(ShellViewItem si)
+        public AspectView(AspectViewItem si)
         {
             Aspect = si;
         }
 
-        public ShellViewItem Aspect { get; }
+        public AspectViewItem Aspect { get; }
 
     }
 }

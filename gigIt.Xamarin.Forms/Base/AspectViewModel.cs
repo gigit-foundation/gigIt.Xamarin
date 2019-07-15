@@ -17,11 +17,11 @@ namespace gigIt.Xamarin.ViewModels
 {
     public class AspectViewModel : BaseViewModel
     {
-        public AspectViewModel(ShellViewItem si)
+        public AspectViewModel(AspectViewItem si)
         {
             Aspect = si;
         }
 
-        public ShellViewItem Aspect { get; }
+        public AspectViewItem Aspect { get; }
     }
 }

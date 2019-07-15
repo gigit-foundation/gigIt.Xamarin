@@ -10,7 +10,7 @@ namespace gigIt.Xamarin.ViewModels
     {
         //public IDataStore<Skills> DataStore => DependencyService.Get<IDataStore<Skills>>() ?? new MockSkillsStore();
 
-        public SkillsViewModel(ShellViewItem si) : base(si)
+        public SkillsViewModel(AspectViewItem si) : base(si)
         {
         }
     }
