@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<v:AspectView
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:g="clr-namespace:gigIt.Xamarin"
+    xmlns:v="clr-namespace:gigIt.Xamarin.Views"
+    xmlns:vm="clr-namespace:gigIt.Xamarin.ViewModels"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="gigIt.Xamarin.Views.SkillsView"
+    ControlTemplate="{StaticResource MainPageTemplate}"
+    Title="{Binding Title}">
+
+    <Grid BackgroundColor="{Static g:gigItColors.bodyBG}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+    </Grid>
+</v:AspectView>

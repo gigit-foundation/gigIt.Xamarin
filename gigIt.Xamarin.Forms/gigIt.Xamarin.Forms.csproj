@@ -4,17 +4,35 @@
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
 
-  <Import Project="..\gigIt.Xamarin\gigIt.Xamarin.projitems" Label="Shared" />
-
   <ItemGroup>
     <PackageReference Include="MvvmCross.Forms" Version="6.3.1" />
     <PackageReference Include="Xamarin.Forms" Version="4.1.0.581479" />
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Update="App\Views\BloomView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="D:\Source\alcheByte\gigIt\gigIt.Xamarin\gigIt.Xamarin\App\App.xaml">
       <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include=".recycle\" />
+    <Folder Include="App\ViewModels\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Aspects\Gigs\Views\MarketView.xaml.cs">
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Aspects\Market\Views\MarketView.xaml.cs">
+      <DependentUpon>MarketView.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Aspects\People\Views\PeopleView.xaml.cs">
+      <DependentUpon>PeopleView.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
 
 </Project>

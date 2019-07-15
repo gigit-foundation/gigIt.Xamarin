@@ -9,18 +9,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "gigIt.Xamarin.iOS", "gigIt.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "gigIt.Xamarin.UWP", "gigIt.Xamarin.UWP\gigIt.Xamarin.UWP.csproj", "{6E591DBE-27AB-44B1-B341-92AAEE6A74E1}"
 EndProject
-Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "gigIt.Xamarin", "gigIt.Xamarin\gigIt.Xamarin.shproj", "{D07A56DC-86BC-4979-AFA2-8252836DA18D}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "gigIt.Xamarin.Forms", "gigIt.Xamarin.Forms\gigIt.Xamarin.Forms.csproj", "{E2BDB86A-64A8-4BD5-9D77-627E363A3E31}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "gigIt.Xamarin.Forms", "gigIt.Xamarin.Forms\gigIt.Xamarin.Forms.csproj", "{E2BDB86A-64A8-4BD5-9D77-627E363A3E31}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".Shared", ".Shared", "{18C4FD20-AC97-44B5-9FC0-2C643950B874}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Platforms", "Platforms", "{AD690F47-0EDA-431E-B4D7-7A4AC9331EB8}"
 EndProject
 Global
-	GlobalSection(SharedMSBuildProjectFiles) = preSolution
-		gigIt.Xamarin\gigIt.Xamarin.projitems*{d07a56dc-86bc-4979-afa2-8252836da18d}*SharedItemsImports = 13
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Debug|ARM = Debug|ARM
@@ -176,7 +171,6 @@ Global
 		{24CE3C36-16B9-426D-AA0C-5961ECF8D88C} = {AD690F47-0EDA-431E-B4D7-7A4AC9331EB8}
 		{2B74549E-0370-44CB-81AA-04A4CE406E4B} = {AD690F47-0EDA-431E-B4D7-7A4AC9331EB8}
 		{6E591DBE-27AB-44B1-B341-92AAEE6A74E1} = {AD690F47-0EDA-431E-B4D7-7A4AC9331EB8}
-		{D07A56DC-86BC-4979-AFA2-8252836DA18D} = {18C4FD20-AC97-44B5-9FC0-2C643950B874}
 		{E2BDB86A-64A8-4BD5-9D77-627E363A3E31} = {18C4FD20-AC97-44B5-9FC0-2C643950B874}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
