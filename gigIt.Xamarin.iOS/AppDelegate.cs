@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-
 using Foundation;
 using UIKit;
+
+using FFImageLoading.Forms.Platform;
+using FFImageLoading.Svg.Forms;
 
 namespace gigIt.Xamarin.iOS
 {
@@ -23,6 +25,10 @@ namespace gigIt.Xamarin.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             global::Xamarin.Forms.Forms.Init();
+
+            CachedImageRenderer.Init();
+            var ignore = typeof(SvgCachedImage);
+
             LoadApplication(new TheApp());
 
             return base.FinishedLaunching(app, options);

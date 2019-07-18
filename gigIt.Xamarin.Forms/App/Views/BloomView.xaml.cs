@@ -59,7 +59,7 @@ namespace gigIt.Xamarin.App.Views
             set { SetProperty(ref isOpen, value); }
         }
 
-        int iconSize = 45;
+        int iconSize = 40;
         public int IconSize
         {
             get { return iconSize; }
@@ -81,20 +81,20 @@ namespace gigIt.Xamarin.App.Views
             //this.BackgroundColor = Color.FromHex("44111111");
             await Task.WhenAll(new Task[]
             {
-                // scale buttons up to 1
-                btnSparks.ScaleTo(1, 100, Easing.CubicInOut),
-                btnSkills.ScaleTo(1, 100, Easing.CubicInOut),
-                btnPeople.ScaleTo(1, 100, Easing.CubicInOut),
-                btnWork.ScaleTo(1, 100, Easing.CubicInOut),
-                btnMarket.ScaleTo(1, 100, Easing.CubicInOut),
-                // fan out
-                btnSparks.TranslateTo(0, -70, 100, Easing.CubicInOut),
-                btnSkills.TranslateTo(66.574, -21.6312, 100, Easing.CubicInOut),
-                btnPeople.TranslateTo(41.1450, 56.6312, 100, Easing.CubicInOut),
-                btnWork.TranslateTo(-41.1450, 56.6312, 100, Easing.CubicInOut),
-                btnMarket.TranslateTo(-66.574, -21.6312, 100, Easing.CubicInOut),
+                //// scale buttons up to 1
+                //btnSparks.ScaleTo(1, 100, Easing.CubicInOut),
+                //btnSkills.ScaleTo(1, 100, Easing.CubicInOut),
+                //btnPeople.ScaleTo(1, 100, Easing.CubicInOut),
+                //btnWork.ScaleTo(1, 100, Easing.CubicInOut),
+                //btnMarket.ScaleTo(1, 100, Easing.CubicInOut),
+                //// fan out
+                //btnSparks.TranslateTo(0, -70, 100, Easing.CubicInOut),
+                //btnSkills.TranslateTo(66.574, -21.6312, 100, Easing.CubicInOut),
+                //btnPeople.TranslateTo(41.1450, 56.6312, 100, Easing.CubicInOut),
+                //btnWork.TranslateTo(-41.1450, 56.6312, 100, Easing.CubicInOut),
+                //btnMarket.TranslateTo(-66.574, -21.6312, 100, Easing.CubicInOut),
                 // make center smaller and move it up
-                btnBloom.ScaleTo(0.65, 100, Easing.SpringOut),
+                //btnBloom.ScaleTo(0.65, 100, Easing.SpringOut),
                 // slide the whole thing up
                 this.TranslateTo(0, -70, 200, Easing.SpringOut),
             });
@@ -107,20 +107,20 @@ namespace gigIt.Xamarin.App.Views
 
             await Task.WhenAll(new Task[]
             {
-                // recenter
-                btnSparks.TranslateTo(0, 0, 100, Easing.CubicInOut),
-                btnSkills.TranslateTo(0, 0, 100, Easing.CubicInOut),
-                btnPeople.TranslateTo(0, 0, 100, Easing.CubicInOut),
-                btnWork.TranslateTo(0, 0, 100, Easing.CubicInOut),
-                btnMarket.TranslateTo(0, 0, 100, Easing.CubicInOut),
-                // shrink buttons
-                btnSparks.ScaleTo(0.1, 100, Easing.CubicInOut),
-                btnSkills.ScaleTo(0.1, 100, Easing.CubicInOut),
-                btnPeople.ScaleTo(0.1, 100, Easing.CubicInOut),
-                btnWork.ScaleTo(0.1, 100, Easing.CubicInOut),
-                btnMarket.ScaleTo(0.1, 100, Easing.CubicInOut),
+                //// recenter
+                //btnSparks.TranslateTo(0, 0, 100, Easing.CubicInOut),
+                //btnSkills.TranslateTo(0, 0, 100, Easing.CubicInOut),
+                //btnPeople.TranslateTo(0, 0, 100, Easing.CubicInOut),
+                //btnWork.TranslateTo(0, 0, 100, Easing.CubicInOut),
+                //btnMarket.TranslateTo(0, 0, 100, Easing.CubicInOut),
+                //// shrink buttons
+                //btnSparks.ScaleTo(0.1, 100, Easing.CubicInOut),
+                //btnSkills.ScaleTo(0.1, 100, Easing.CubicInOut),
+                //btnPeople.ScaleTo(0.1, 100, Easing.CubicInOut),
+                //btnWork.ScaleTo(0.1, 100, Easing.CubicInOut),
+                //btnMarket.ScaleTo(0.1, 100, Easing.CubicInOut),
                 // reset main button
-                btnBloom.ScaleTo(1, 100, Easing.SpringIn),
+                //btnBloom.ScaleTo(1, 100, Easing.SpringIn),
                 // slide the whole thing back down
                 this.TranslateTo(0, 0, 200, Easing.SpringIn),
             });

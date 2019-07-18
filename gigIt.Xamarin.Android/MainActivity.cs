@@ -7,6 +7,9 @@ using Android.Views;
 using Android.Widget;
 using Android.OS;
 
+using FFImageLoading.Forms.Platform;
+using FFImageLoading.Svg.Forms;
+
 namespace gigIt.Xamarin.Droid
 {
     [Activity(Label = "gigIt", Icon = "@mipmap/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
@@ -19,6 +22,10 @@ namespace gigIt.Xamarin.Droid
 
             base.OnCreate(savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
+
+            CachedImageRenderer.Init(true);
+            var ignore = typeof(SvgCachedImage);
+
             LoadApplication(new TheApp());
         }
     }

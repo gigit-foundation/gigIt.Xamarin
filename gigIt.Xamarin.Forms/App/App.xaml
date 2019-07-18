@@ -3,7 +3,6 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:r="clr-namespace:gigIt.Xamarin.Resources"
              xmlns:g="clr-namespace:gigIt.Xamarin"
-             xmlns:rm="clr-namespace:Xamarin.Forms.RadialMenu;assembly=Xamarin.Forms.RadialMenu"
              xmlns:v="clr-namespace:gigIt.Xamarin.App.Views"
              x:Class="gigIt.Xamarin.TheApp">
     <Application.Resources>

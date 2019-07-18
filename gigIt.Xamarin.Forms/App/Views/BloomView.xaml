@@ -1,50 +1,59 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:b="clr-namespace:gigIt.Xamarin.Forms"
              xmlns:r="clr-namespace:gigIt.Xamarin.Resources"
              xmlns:g="clr-namespace:gigIt.Xamarin"
+             xmlns:svg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
              x:Class="gigIt.Xamarin.App.Views.BloomView">
+    <ContentView.Resources>
+        <ResourceDictionary>
+            <b:NotConverter x:Key="notConverter"/>
+        </ResourceDictionary>
+    </ContentView.Resources>
     <ContentView.Content>
         <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="Auto"/>
-            </Grid.RowDefinitions>
-            <r:gigItIconButton x:Name="btnSparks" BackgroundColor="{Static g:gigItColors.headerBG}"
-                               IsVisible="{Binding IsOpen}"
-                               Text="{Static g:gigItIcons.Spark}" FontSize="{Binding IconSize}"
-                               TextColor="{Static g:gigItColors.gigitSpark}"
-                               HeightRequest="70" WidthRequest="70" CornerRadius="35"
-                               Command="{Binding NavToSparks}"/>
-            <r:gigItIconButton x:Name="btnSkills" BackgroundColor="{Static g:gigItColors.headerBG}"
-                               IsVisible="{Binding IsOpen}"
-                               Text="{Static g:gigItIcons.Skills}" FontSize="{Binding IconSize}"
-                               TextColor="{Static g:gigItColors.gigitWater}"
-                               HeightRequest="70" WidthRequest="70" CornerRadius="35"
-                               Command="{Binding NavToSkills}"/>
-            <r:gigItIconButton x:Name="btnPeople" BackgroundColor="{Static g:gigItColors.headerBG}"
-                               IsVisible="{Binding IsOpen}"
-                               Text="{Static g:gigItIcons.Actors}" FontSize="{Binding IconSize}"
-                               TextColor="{Static g:gigItColors.gigitLife}"
-                               HeightRequest="70" WidthRequest="70" CornerRadius="35"
-                               Command="{Binding NavToPeople}"/>
-            <r:gigItIconButton x:Name="btnWork" BackgroundColor="{Static g:gigItColors.headerBG}"
-                               IsVisible="{Binding IsOpen}"
-                               Text="{Static g:gigItIcons.Work}" FontSize="{Binding IconSize}"
-                               TextColor="{Static g:gigItColors.gigitEarth}"
-                               HeightRequest="70" WidthRequest="70" CornerRadius="35"
-                               Command="{Binding NavToWork}"/>
-            <r:gigItIconButton x:Name="btnMarket" BackgroundColor="{Static g:gigItColors.headerBG}"
-                               IsVisible="{Binding IsOpen}"
-                               Text="{Static g:gigItIcons.Market}" FontSize="{Binding IconSize}"
-                               TextColor="{Static g:gigItColors.gigitSky}"
-                               HeightRequest="70" WidthRequest="70" CornerRadius="35"
-                               Command="{Binding NavToMarket}"/>
-            <r:gigItIconButton x:Name="btnBloom" BackgroundColor="{Static g:gigItColors.headerBG}"
-                               Text="{Static g:gigItIcons.Gigit}" FontSize="64"
-                               TextColor="{Binding CurrentAspect.TitleColor}"
-                               HeightRequest="100" WidthRequest="100" CornerRadius="50"
-                               Clicked="ToggleBloom"/>
+            <AbsoluteLayout x:Name="gridBloom" IsVisible="{Binding IsOpen}">
+                <r:gigItIconButton BackgroundColor="{Static g:gigItColors.headerBG}"
+                                   Text="{Static g:gigItIcons.Ideas}" FontSize="{Binding IconSize}"
+                                   TextColor="{Static g:gigItColors.gigitSpark}"
+                                   AbsoluteLayout.LayoutBounds="66.574,126.6312,70,70" CornerRadius="35"
+                                   Command="{Binding NavToSparks}"/>
+                <r:gigItIconButton BackgroundColor="{Static g:gigItColors.headerBG}"
+                                   Text="{Static g:gigItIcons.Skills}" FontSize="{Binding IconSize}"
+                                   TextColor="{Static g:gigItColors.gigitWater}"
+                                   AbsoluteLayout.LayoutBounds="133.1479,78.2624,70,70" CornerRadius="35"
+                                   Command="{Binding NavToSkills}"/>
+                <r:gigItIconButton BackgroundColor="{Static g:gigItColors.headerBG}"
+                                   Text="{Static g:gigItIcons.Followers}" FontSize="{Binding IconSize}"
+                                   TextColor="{Static g:gigItColors.gigitLife}"
+                                   AbsoluteLayout.LayoutBounds="107.7189,0,70,70" CornerRadius="35"
+                                   Command="{Binding NavToPeople}"/>
+                <r:gigItIconButton BackgroundColor="{Static g:gigItColors.headerBG}"
+                                   Text="{Static g:gigItIcons.Work}" FontSize="{Binding IconSize}"
+                                   TextColor="{Static g:gigItColors.gigitEarth}"
+                                   AbsoluteLayout.LayoutBounds="25.4290,0,70,70" CornerRadius="35"
+                                   Command="{Binding NavToWork}"/>
+                <r:gigItIconButton BackgroundColor="{Static g:gigItColors.headerBG}"
+                                   Text="{Static g:gigItIcons.Market}" FontSize="{Binding IconSize}"
+                                   TextColor="{Static g:gigItColors.gigitSky}"
+                                   AbsoluteLayout.LayoutBounds="0,78.2624,70,70" CornerRadius="35"
+                                   Command="{Binding NavToMarket}"/>
+                <r:gigItIconButton BackgroundColor="{Static g:gigItColors.headerBG}"
+                                   Text="{Static g:gigItIcons.CloseButton2}" FontSize="30"
+                                   TextColor="{Static g:gigItColors.headerFG}"
+                                   AbsoluteLayout.LayoutBounds="76.5740,66.6312,50,50" CornerRadius="25"
+                                   Command="{Binding Wilt}"/>
+            </AbsoluteLayout>
+            <Grid x:Name="btnBloom" IsVisible="{Binding IsOpen, Converter={StaticResource notConverter}}">
+                <Button BackgroundColor="Transparent"
+                        HeightRequest="100" WidthRequest="100" CornerRadius="50"
+                        Command="{Binding Bloom}"/>
+                <svg:SvgCachedImage Source="resource://gigIt.Xamarin.Forms.Resources.Images.gigit_studio_icon.svg"
+                                    BackgroundColor="Transparent" InputTransparent="True"
+                                    HeightRequest="90" WidthRequest="90"
+                                    Margin="10"/>
+            </Grid>
         </Grid>
     </ContentView.Content>
 </ContentView>

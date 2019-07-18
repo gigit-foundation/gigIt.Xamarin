@@ -13,6 +13,9 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
+using FFImageLoading.Forms.Platform;
+using FFImageLoading.Svg.Forms;
+
 namespace gigIt.Xamarin.UWP
 {
     public sealed partial class MainPage
@@ -20,6 +23,9 @@ namespace gigIt.Xamarin.UWP
         public MainPage()
         {
             this.InitializeComponent();
+
+            CachedImageRenderer.Init();
+            var ignore = typeof(SvgCachedImage);
 
             LoadApplication(new TheApp());
         }
