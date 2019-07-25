@@ -13,8 +13,8 @@ using Android.Widget;
 using XamForms = Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
 
-[assembly: XamForms.ExportRenderer(typeof(gigIt.Xamarin.Resources.gigItIconLabel), typeof(gigIt.Xamarin.Droid.Custom.Renderers.gigItLabelRenderer))]
-[assembly: XamForms.ExportRenderer(typeof(gigIt.Xamarin.Resources.gigItIconButton), typeof(gigIt.Xamarin.Droid.Custom.Renderers.gigItButtonRenderer))]
+[assembly: XamForms.ExportRenderer(typeof(gigIt.Xamarin.Controls.gigItIconLabel), typeof(gigIt.Xamarin.Droid.Custom.Renderers.gigItLabelRenderer))]
+[assembly: XamForms.ExportRenderer(typeof(gigIt.Xamarin.Controls.gigItIconButton), typeof(gigIt.Xamarin.Droid.Custom.Renderers.gigItButtonRenderer))]
 namespace gigIt.Xamarin.Droid.Custom.Renderers
 {
     public class gigItLabelRenderer : LabelRenderer
