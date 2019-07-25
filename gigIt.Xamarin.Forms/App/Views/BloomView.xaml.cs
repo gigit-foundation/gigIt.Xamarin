@@ -18,8 +18,8 @@ namespace gigIt.Xamarin.App.Views
     {
         public BloomView()
         {
-            Bloom = new Command(() => StartBloom());
-            Wilt = new Command(() => StartWilt());
+            Bloom = new Command(async () => await StartBloom());
+            Wilt = new Command(async () => await StartWilt());
 
             NavToSparks = new Command(() => NavToAspect(1));
             NavToSkills = new Command(() => NavToAspect(2));
@@ -73,71 +73,51 @@ namespace gigIt.Xamarin.App.Views
             set { SetProperty(ref currentAspect, value); }
         }
 
-        async void StartBloom()
+        async Task<bool> StartBloom()
         {
-            if (IsOpen) return;
+            if (IsOpen) return false;
 
             IsOpen = true;
-            //this.BackgroundColor = Color.FromHex("44111111");
+            // do animations
             await Task.WhenAll(new Task[]
             {
-                //// scale buttons up to 1
-                //btnSparks.ScaleTo(1, 100, Easing.CubicInOut),
-                //btnSkills.ScaleTo(1, 100, Easing.CubicInOut),
-                //btnPeople.ScaleTo(1, 100, Easing.CubicInOut),
-                //btnWork.ScaleTo(1, 100, Easing.CubicInOut),
-                //btnMarket.ScaleTo(1, 100, Easing.CubicInOut),
-                //// fan out
-                //btnSparks.TranslateTo(0, -70, 100, Easing.CubicInOut),
-                //btnSkills.TranslateTo(66.574, -21.6312, 100, Easing.CubicInOut),
-                //btnPeople.TranslateTo(41.1450, 56.6312, 100, Easing.CubicInOut),
-                //btnWork.TranslateTo(-41.1450, 56.6312, 100, Easing.CubicInOut),
-                //btnMarket.TranslateTo(-66.574, -21.6312, 100, Easing.CubicInOut),
-                // make center smaller and move it up
-                //btnBloom.ScaleTo(0.65, 100, Easing.SpringOut),
-                // slide the whole thing up
-                this.TranslateTo(0, -70, 200, Easing.SpringOut),
+                // make button smaller and slide it up
+                btnBloom.TranslateTo(0, -70, 125, Easing.SpringOut),
+                btnBloom.ScaleTo(5, 125, Easing.SpringOut),
+                // move bloom up
+                gridBloom.TranslateTo(0, -70, 125, Easing.SpringOut),
             });
 
+            return true;
         }
 
-        async void StartWilt()
+        async Task<bool> StartWilt()
         {
-            if (!IsOpen) return;
-
+            if (!IsOpen) return false;
+            // do animations
             await Task.WhenAll(new Task[]
             {
-                //// recenter
-                //btnSparks.TranslateTo(0, 0, 100, Easing.CubicInOut),
-                //btnSkills.TranslateTo(0, 0, 100, Easing.CubicInOut),
-                //btnPeople.TranslateTo(0, 0, 100, Easing.CubicInOut),
-                //btnWork.TranslateTo(0, 0, 100, Easing.CubicInOut),
-                //btnMarket.TranslateTo(0, 0, 100, Easing.CubicInOut),
-                //// shrink buttons
-                //btnSparks.ScaleTo(0.1, 100, Easing.CubicInOut),
-                //btnSkills.ScaleTo(0.1, 100, Easing.CubicInOut),
-                //btnPeople.ScaleTo(0.1, 100, Easing.CubicInOut),
-                //btnWork.ScaleTo(0.1, 100, Easing.CubicInOut),
-                //btnMarket.ScaleTo(0.1, 100, Easing.CubicInOut),
                 // reset main button
-                //btnBloom.ScaleTo(1, 100, Easing.SpringIn),
-                // slide the whole thing back down
-                this.TranslateTo(0, 0, 200, Easing.SpringIn),
+                btnBloom.ScaleTo(1, 125, Easing.SpringIn),
+                btnBloom.TranslateTo(0, 0, 125, Easing.SpringIn),
+                // move bloom back down
+                gridBloom.TranslateTo(0, 0, 125, Easing.SpringIn),
             });
 
             IsOpen = false;
+            return true;
         }
 
         async void NavToAspect(int sid)
         {
-            StartWilt();
+            await StartWilt();
             CurrentAspect = await (Application.Current as TheApp).NavigateToAspect(sid);
         }
 
-        private void ToggleBloom(object sender, EventArgs e)
+        public async void ToggleBloom(object sender, EventArgs e)
         {
-            if (IsOpen) StartWilt();
-            else StartBloom();
+            if (IsOpen) await StartWilt();
+            else await StartBloom();
         }
     }
 }
