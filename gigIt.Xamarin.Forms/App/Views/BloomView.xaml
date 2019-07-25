@@ -2,7 +2,7 @@
 <ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:b="clr-namespace:gigIt.Xamarin.Forms"
-             xmlns:r="clr-namespace:gigIt.Xamarin.Resources"
+             xmlns:ctrls="clr-namespace:gigIt.Xamarin.Controls"
              xmlns:g="clr-namespace:gigIt.Xamarin"
              xmlns:svg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
              x:Class="gigIt.Xamarin.App.Views.BloomView">
@@ -13,46 +13,114 @@
     </ContentView.Resources>
     <ContentView.Content>
         <Grid>
-            <AbsoluteLayout x:Name="gridBloom" IsVisible="{Binding IsOpen}">
-                <r:gigItIconButton BackgroundColor="{Static g:gigItColors.headerBG}"
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <!--<Grid x:Name="gridCover" Grid.RowSpan="2"
+                  BackgroundColor="#22CCCCCC" HorizontalOptions="Fill" VerticalOptions="Fill"/>-->
+            <Grid x:Name="gridBloom" IsVisible="{Binding IsOpen}" Grid.Row="1"
+                  HorizontalOptions="Center" Padding="10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="25.43"/>
+                    <ColumnDefinition Width="41.14"/>
+                    <ColumnDefinition Width="3.43"/>
+                    <ColumnDefinition Width="6.57"/>
+                    <ColumnDefinition Width="18.86"/>
+                    <ColumnDefinition Width="12.29"/>
+                    <ColumnDefinition Width="18.86"/>
+                    <ColumnDefinition Width="6.57"/>
+                    <ColumnDefinition Width="3.43"/>
+                    <ColumnDefinition Width="41.14"/>
+                    <ColumnDefinition Width="25.43"/>
+                    <!--<ColumnDefinition Width="31.79"/>
+                    <ColumnDefinition Width="51.43"/>
+                    <ColumnDefinition Width="4.28"/>
+                    <ColumnDefinition Width="8.22"/>
+                    <ColumnDefinition Width="23.57"/>
+                    <ColumnDefinition Width="15.36"/>
+                    <ColumnDefinition Width="23.57"/>
+                    <ColumnDefinition Width="8.22"/>
+                    <ColumnDefinition Width="4.28"/>
+                    <ColumnDefinition Width="51.43"/>
+                    <ColumnDefinition Width="31.79"/>-->
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="48.37"/>
+                    <RowDefinition Height="21.63"/>
+                    <RowDefinition Height="10"/>
+                    <RowDefinition Height="38.37"/>
+                    <RowDefinition Height="8.26"/>
+                    <RowDefinition Height="3.37"/>
+                    <RowDefinition Height="66.63"/>
+                    <!--<RowDefinition Height="60.46"/>
+                    <RowDefinition Height="27.04"/>
+                    <RowDefinition Height="12.5"/>
+                    <RowDefinition Height="47.96"/>
+                    <RowDefinition Height="10.33"/>
+                    <RowDefinition Height="4.21"/>
+                    <RowDefinition Height="83.29"/>-->
+                </Grid.RowDefinitions>
+                <!--<Grid x:Name="gridCover" Grid.RowSpan="7" Grid.ColumnSpan="11"
+                  BackgroundColor="#22CCCCCC" HorizontalOptions="Fill" VerticalOptions="Fill" />-->
+                <ctrls:gigItIconButton BackgroundColor="{Static g:gigItColors.headerBG}"
+                                   VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"
                                    Text="{Static g:gigItIcons.Ideas}" FontSize="{Binding IconSize}"
-                                   TextColor="{Static g:gigItColors.gigitSpark}"
-                                   AbsoluteLayout.LayoutBounds="66.574,126.6312,70,70" CornerRadius="35"
+                                   TextColor="{Static g:gigItColors.gigitSpark}" 
+                                   HeightRequest="70" WidthRequest="70" CornerRadius="35"
+                                   Grid.Column="2" Grid.ColumnSpan="7"
+                                   Grid.Row="0" Grid.RowSpan="2"
                                    Command="{Binding NavToSparks}"/>
-                <r:gigItIconButton BackgroundColor="{Static g:gigItColors.headerBG}"
+                <ctrls:gigItIconButton BackgroundColor="{Static g:gigItColors.headerBG}"
+                                   VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"
                                    Text="{Static g:gigItIcons.Skills}" FontSize="{Binding IconSize}"
                                    TextColor="{Static g:gigItColors.gigitWater}"
-                                   AbsoluteLayout.LayoutBounds="133.1479,78.2624,70,70" CornerRadius="35"
+                                   HeightRequest="70" WidthRequest="70" CornerRadius="35"
+                                   Grid.Column="8" Grid.ColumnSpan="3"
+                                   Grid.Row="1" Grid.RowSpan="3"
                                    Command="{Binding NavToSkills}"/>
-                <r:gigItIconButton BackgroundColor="{Static g:gigItColors.headerBG}"
+                <ctrls:gigItIconButton BackgroundColor="{Static g:gigItColors.headerBG}"
+                                   VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"
                                    Text="{Static g:gigItIcons.Followers}" FontSize="{Binding IconSize}"
                                    TextColor="{Static g:gigItColors.gigitLife}"
-                                   AbsoluteLayout.LayoutBounds="107.7189,0,70,70" CornerRadius="35"
+                                   HeightRequest="70" WidthRequest="70" CornerRadius="35"
+                                   Grid.Column="6" Grid.ColumnSpan="4"
+                                   Grid.Row="5" Grid.RowSpan="2"
                                    Command="{Binding NavToPeople}"/>
-                <r:gigItIconButton BackgroundColor="{Static g:gigItColors.headerBG}"
+                <ctrls:gigItIconButton BackgroundColor="{Static g:gigItColors.headerBG}"
+                                   VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"
                                    Text="{Static g:gigItIcons.Work}" FontSize="{Binding IconSize}"
                                    TextColor="{Static g:gigItColors.gigitEarth}"
-                                   AbsoluteLayout.LayoutBounds="25.4290,0,70,70" CornerRadius="35"
+                                   HeightRequest="70" WidthRequest="70" CornerRadius="35"
+                                   Grid.Column="1" Grid.ColumnSpan="4"
+                                   Grid.Row="5" Grid.RowSpan="2"
                                    Command="{Binding NavToWork}"/>
-                <r:gigItIconButton BackgroundColor="{Static g:gigItColors.headerBG}"
+                <ctrls:gigItIconButton BackgroundColor="{Static g:gigItColors.headerBG}"
+                                   VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"
                                    Text="{Static g:gigItIcons.Market}" FontSize="{Binding IconSize}"
                                    TextColor="{Static g:gigItColors.gigitSky}"
-                                   AbsoluteLayout.LayoutBounds="0,78.2624,70,70" CornerRadius="35"
+                                   HeightRequest="70" WidthRequest="70" CornerRadius="35"
+                                   Grid.Column="0" Grid.ColumnSpan="3"
+                                   Grid.Row="1" Grid.RowSpan="3"
                                    Command="{Binding NavToMarket}"/>
-                <r:gigItIconButton BackgroundColor="{Static g:gigItColors.headerBG}"
+                <ctrls:gigItIconButton BackgroundColor="{Static g:gigItColors.headerBG}"
+                                   VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"
                                    Text="{Static g:gigItIcons.CloseButton2}" FontSize="30"
                                    TextColor="{Static g:gigItColors.headerFG}"
-                                   AbsoluteLayout.LayoutBounds="76.5740,66.6312,50,50" CornerRadius="25"
+                                   HeightRequest="50" WidthRequest="50" CornerRadius="25"
+                                   Grid.Column="4" Grid.ColumnSpan="3"
+                                   Grid.Row="3" Grid.RowSpan="3"
                                    Command="{Binding Wilt}"/>
-            </AbsoluteLayout>
-            <Grid x:Name="btnBloom" IsVisible="{Binding IsOpen, Converter={StaticResource notConverter}}">
+            </Grid>
+            <Grid x:Name="btnBloom" IsVisible="{Binding IsOpen, Converter={StaticResource notConverter}}" Grid.Row="1"
+                  HorizontalOptions="Center" Padding="10">
                 <Button BackgroundColor="Transparent"
-                        HeightRequest="100" WidthRequest="100" CornerRadius="50"
+                        HeightRequest="65" WidthRequest="65" CornerRadius="32"
                         Command="{Binding Bloom}"/>
                 <svg:SvgCachedImage Source="resource://gigIt.Xamarin.Forms.Resources.Images.gigit_studio_icon.svg"
                                     BackgroundColor="Transparent" InputTransparent="True"
-                                    HeightRequest="90" WidthRequest="90"
-                                    Margin="10"/>
+                                    HeightRequest="55" WidthRequest="55"
+                                    Margin="5"/>
             </Grid>
         </Grid>
     </ContentView.Content>
