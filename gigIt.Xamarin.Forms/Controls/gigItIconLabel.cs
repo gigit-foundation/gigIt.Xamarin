@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Text;
 using Xamarin.Forms;
 
-namespace gigIt.Xamarin.Resources
+namespace gigIt.Xamarin.Controls
 {
-    public class gigItIconSource : FontImageSource
+    public class gigItIconLabel : Label
     {
-        public gigItIconSource()
+        public gigItIconLabel()
         {
             switch (Device.RuntimePlatform)
             {
@@ -27,6 +27,8 @@ namespace gigIt.Xamarin.Resources
                         break;
                     }
             }
+            VerticalOptions = LayoutOptions.Center;
+            HorizontalOptions = LayoutOptions.Center;
         }
     }
 }

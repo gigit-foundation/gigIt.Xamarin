@@ -10,7 +10,6 @@ using Xamarin.Forms;
 
 using gigIt.Xamarin.Models;
 using gigIt.Xamarin.Services;
-using gigIt.Xamarin.Resources;
 using gigIt.Xamarin.Views;
 
 namespace gigIt.Xamarin.ViewModels

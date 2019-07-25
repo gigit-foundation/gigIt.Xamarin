@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Application xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:r="clr-namespace:gigIt.Xamarin.Resources"
+             xmlns:ctrls="clr-namespace:gigIt.Xamarin.Controls"
              xmlns:g="clr-namespace:gigIt.Xamarin"
              xmlns:v="clr-namespace:gigIt.Xamarin.App.Views"
              x:Class="gigIt.Xamarin.TheApp">
@@ -31,7 +31,7 @@
                 <Grid BindingContext="{TemplateBinding BindingContext}" BackgroundColor="{Static g:gigItColors.bodyBG}" 
                     VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" ColumnSpacing="0">
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="60"/>
+                        <RowDefinition Height="55"/>
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
@@ -40,19 +40,19 @@
                         <ColumnDefinition Width="auto"/>
                     </Grid.ColumnDefinitions>
                     <BoxView BackgroundColor="{Static g:gigItColors.headerBG}" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="3"/>
-                    <r:gigItIconButton 
-                        FontSize="40" TextColor="{Binding Aspect.TitleColor}" BackgroundColor="{Static g:gigItColors.headerBG}"
+                    <ctrls:gigItIconButton 
+                        FontSize="33" TextColor="{Binding Aspect.TitleColor}" BackgroundColor="{Static g:gigItColors.headerBG}"
                         Text="{Binding Aspect.IconGlyph}"
                         Command="{Binding ShowMenu}"
-                        Grid.Column="0" Grid.Row="0"/>
+                        Grid.Column="0" Grid.Row="0" Padding="10"/>
                     <Label Text="{Binding Aspect.Title}" 
                         VerticalTextAlignment="Center" HorizontalTextAlignment="Start"
                         FontSize="Large" TextColor="{Binding Aspect.TitleColor}"
-                        Grid.Column="1" Grid.Row="0"/>
+                        Grid.Column="1" Grid.Row="0" Margin="10"/>
                     <ContentPresenter  BackgroundColor="{Static g:gigItColors.bodyBG}" 
                         VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" 
-                        Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="3"/>
-                    <v:BloomView VerticalOptions="End" HorizontalOptions="Center"
+                        Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="3" Padding="10"/>
+                    <v:BloomView VerticalOptions="Fill" HorizontalOptions="Fill"
                                  BackgroundColor="Transparent"
                                  Grid.ColumnSpan="3" Grid.RowSpan="2"/>
                 </Grid>
