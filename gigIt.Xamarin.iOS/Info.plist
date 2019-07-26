@@ -36,13 +36,15 @@
 	<array>
 		<string>Fonts/gigit.ttf</string>
 	</array>
-	<key>UIViewControllerBasedStatusBarAppearance</key>
-	<false/>
 	<key>XSLaunchImageAssets</key>
 	<string>Assets.xcassets/LaunchImages.launchimage</string>
 	<key>CFBundleIdentifier</key>
 	<string>world.gigit.studio.ios</string>
 	<key>CFBundleShortVersionString</key>
 	<string>1</string>
+	<key>UIStatusBarStyle</key>
+	<string>Transparent black</string>
+	<key>UIViewControllerBasedStatusBarAppearance</key>
+	<true/>
 </dict>
 </plist>
