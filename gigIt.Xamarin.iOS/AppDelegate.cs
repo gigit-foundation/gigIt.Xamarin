@@ -24,15 +24,15 @@ namespace gigIt.Xamarin.iOS
         //
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
+            UINavigationBar.Appearance.BarTintColor = UIColor.FromRGB(0x90, 0x90, 0x90);
+            UINavigationBar.Appearance.BarStyle = UIBarStyle.BlackOpaque;// UIColor.FromRGB(0x20, 0x20, 0x20);
+
             global::Xamarin.Forms.Forms.Init();
 
             CachedImageRenderer.Init();
             var ignore = typeof(SvgCachedImage);
 
             LoadApplication(new TheApp());
-
-            UINavigationBar.Appearance.BarTintColor = UIColor.FromRGB(0x90,0x90,0x90);
-            UINavigationBar.Appearance.BarStyle = UIBarStyle.BlackOpaque;// UIColor.FromRGB(0x20, 0x20, 0x20);
 
             return base.FinishedLaunching(app, options);
         }
