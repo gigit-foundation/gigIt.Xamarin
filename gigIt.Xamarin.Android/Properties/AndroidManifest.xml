@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="world.gigIt.studio" android:installLocation="auto">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="world.gigIt.studio.droid" android:installLocation="auto">
 	<uses-sdk android:minSdkVersion="23" android:targetSdkVersion="27" />
-	<application android:label="gigIt.Xamarin.Android"></application>
+	<application android:label="gigIt Studio" android:icon="@drawable/icon"></application>
 </manifest>
