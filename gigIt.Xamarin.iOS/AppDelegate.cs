@@ -31,6 +31,9 @@ namespace gigIt.Xamarin.iOS
 
             LoadApplication(new TheApp());
 
+            UINavigationBar.Appearance.BarTintColor = UIColor.FromRGB(0x90,0x90,0x90);
+            UINavigationBar.Appearance.BarStyle = UIBarStyle.BlackOpaque;// UIColor.FromRGB(0x20, 0x20, 0x20);
+
             return base.FinishedLaunching(app, options);
         }
     }
