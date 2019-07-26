@@ -43,8 +43,8 @@
 	<key>CFBundleShortVersionString</key>
 	<string>1</string>
 	<key>UIStatusBarStyle</key>
-	<string>Transparent black</string>
+	<string>UIStatusBarStyleLightContent</string>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
-	<true/>
+	<false/>
 </dict>
 </plist>

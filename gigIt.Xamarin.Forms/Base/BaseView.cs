@@ -11,6 +11,7 @@ namespace gigIt.Xamarin.Views
         public BaseView()
         {
             XamForms.NavigationPage.SetHasNavigationBar(this, false);
+            this.BackgroundColor = gigItColors.bodyBG;
             On<XamForms.PlatformConfiguration.iOS>().SetUseSafeArea(true);
         }
     }

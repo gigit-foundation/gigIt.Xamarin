@@ -38,10 +38,9 @@ namespace gigIt.Xamarin
                 var page = new Lazy<NavigationPage>(() =>
                 {
                     var p = new NavigationPage(item.CreateView(item));
-                    p.BackgroundColor = Color.FromHex("202020");
-                    p.BarBackgroundColor = Color.FromHex("202020");
-                    p.BarTextColor = Color.FromHex("CCCCCC");
                     NavigationPage.SetHasNavigationBar(p, false);
+                    p.BarBackgroundColor = gigItColors.bodyBG;
+                    p.BarTextColor = gigItColors.bodyFG;
                     return p;
                 });
 
