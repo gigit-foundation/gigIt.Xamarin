@@ -82,10 +82,10 @@ namespace gigIt.Xamarin.App.Views
             await Task.WhenAll(new Task[]
             {
                 // make button smaller and slide it up
-                btnBloom.TranslateTo(0, -70, 125, Easing.SpringOut),
+                btnBloom.TranslateTo(0, -55, 125, Easing.SpringOut),
                 btnBloom.ScaleTo(5, 125, Easing.SpringOut),
                 // move bloom up
-                gridBloom.TranslateTo(0, -70, 125, Easing.SpringOut),
+                gridBloom.TranslateTo(0, -55, 125, Easing.SpringOut),
             });
 
             return true;
