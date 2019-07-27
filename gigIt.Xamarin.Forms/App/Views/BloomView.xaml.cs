@@ -80,9 +80,9 @@ namespace gigIt.Xamarin.App.Views
             // do animations
             await Task.WhenAll(new Task[]
             {
-                btnBloom.TranslateTo(0, -55, 125, Easing.SpringOut),
+                btnBloom.TranslateTo(0, -40, 125, Easing.SpringOut),
                 btnBloom.FadeTo(0, 250, Easing.SpringOut),
-                gridBloom.FadeTo(1, 250, Easing.SpringOut),
+                gridBloom.FadeTo(1, 125, Easing.SpringOut),
             });
 
             IsOpen = true;
@@ -100,7 +100,7 @@ namespace gigIt.Xamarin.App.Views
             {
                 btnBloom.TranslateTo(0, 0, 125, Easing.SpringIn),
                 btnBloom.FadeTo(1, 250, Easing.SpringOut),
-                gridBloom.FadeTo(0, 250, Easing.SpringOut),
+                gridBloom.FadeTo(0, 125, Easing.SpringOut),
             });
 
             return true;
