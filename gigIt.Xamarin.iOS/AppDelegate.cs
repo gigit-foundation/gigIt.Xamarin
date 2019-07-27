@@ -24,9 +24,6 @@ namespace gigIt.Xamarin.iOS
         //
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
-            // UINavigationBar.Appearance.BarTintColor = UIColor.FromRGB(0x90, 0x90, 0x90);
-            // UINavigationBar.Appearance.BarStyle = UIBarStyle.Black;// UIColor.FromRGB(0x20, 0x20, 0x20);
-
             global::Xamarin.Forms.Forms.Init();
 
             CachedImageRenderer.Init();

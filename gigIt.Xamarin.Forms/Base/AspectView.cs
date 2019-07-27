@@ -8,7 +8,7 @@ namespace gigIt.Xamarin.Views
 {
     public class AspectView : BaseView
     {
-        public AspectView(AspectViewItem si)
+        public AspectView(AspectViewItem si = null)
         {
             Aspect = si;
         }

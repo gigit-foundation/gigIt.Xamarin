@@ -13,13 +13,7 @@
     </ContentView.Resources>
     <ContentView.Content>
         <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="Auto"/>
-            </Grid.RowDefinitions>
-            <!--<Grid x:Name="gridCover" Grid.RowSpan="2"
-                  BackgroundColor="#22CCCCCC" HorizontalOptions="Fill" VerticalOptions="Fill"/>-->
-            <Grid x:Name="gridBloom" IsVisible="{Binding IsOpen}" Grid.Row="1"
+            <Grid x:Name="gridBloom" IsVisible="{Binding IsOpen}"
                   HorizontalOptions="Center" Padding="10">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="25.43"/>
@@ -33,17 +27,6 @@
                     <ColumnDefinition Width="3.43"/>
                     <ColumnDefinition Width="41.14"/>
                     <ColumnDefinition Width="25.43"/>
-                    <!--<ColumnDefinition Width="31.79"/>
-                    <ColumnDefinition Width="51.43"/>
-                    <ColumnDefinition Width="4.28"/>
-                    <ColumnDefinition Width="8.22"/>
-                    <ColumnDefinition Width="23.57"/>
-                    <ColumnDefinition Width="15.36"/>
-                    <ColumnDefinition Width="23.57"/>
-                    <ColumnDefinition Width="8.22"/>
-                    <ColumnDefinition Width="4.28"/>
-                    <ColumnDefinition Width="51.43"/>
-                    <ColumnDefinition Width="31.79"/>-->
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="48.37"/>
@@ -53,16 +36,8 @@
                     <RowDefinition Height="8.26"/>
                     <RowDefinition Height="3.37"/>
                     <RowDefinition Height="66.63"/>
-                    <!--<RowDefinition Height="60.46"/>
-                    <RowDefinition Height="27.04"/>
-                    <RowDefinition Height="12.5"/>
-                    <RowDefinition Height="47.96"/>
-                    <RowDefinition Height="10.33"/>
-                    <RowDefinition Height="4.21"/>
-                    <RowDefinition Height="83.29"/>-->
+                    <RowDefinition Height="55"/>
                 </Grid.RowDefinitions>
-                <!--<Grid x:Name="gridCover" Grid.RowSpan="7" Grid.ColumnSpan="11"
-                  BackgroundColor="#22CCCCCC" HorizontalOptions="Fill" VerticalOptions="Fill" />-->
                 <ctrls:gigItIconButton BackgroundColor="{Static g:gigItColors.headerBG}"
                                    VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"
                                    Text="{Static g:gigItIcons.Spark}" FontSize="{Binding IconSize}"
@@ -112,7 +87,7 @@
                                    Grid.Row="3" Grid.RowSpan="3"
                                    Command="{Binding Wilt}"/>
             </Grid>
-            <Grid x:Name="btnBloom" IsVisible="{Binding IsOpen, Converter={StaticResource notConverter}}" Grid.Row="1"
+            <Grid x:Name="btnBloom" IsVisible="{Binding IsOpen, Converter={StaticResource notConverter}}"
                   HorizontalOptions="Center" Padding="10">
                 <Button BackgroundColor="Transparent"
                         HeightRequest="65" WidthRequest="65" CornerRadius="32"

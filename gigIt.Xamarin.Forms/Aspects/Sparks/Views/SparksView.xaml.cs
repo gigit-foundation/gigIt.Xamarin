@@ -18,7 +18,7 @@ namespace gigIt.Xamarin.Views
     {
         SparksViewModel viewModel;
 
-        public SparksView(AspectViewItem si) : base(si)
+        public SparksView(AspectViewItem si = null) : base(si)
         {
             BindingContext = viewModel = new SparksViewModel(si);
 

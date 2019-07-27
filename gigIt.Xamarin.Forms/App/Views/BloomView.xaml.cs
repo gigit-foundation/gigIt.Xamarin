@@ -77,34 +77,32 @@ namespace gigIt.Xamarin.App.Views
         {
             if (IsOpen) return false;
 
-            IsOpen = true;
             // do animations
             await Task.WhenAll(new Task[]
             {
-                // make button smaller and slide it up
                 btnBloom.TranslateTo(0, -55, 125, Easing.SpringOut),
-                btnBloom.ScaleTo(5, 125, Easing.SpringOut),
-                // move bloom up
-                gridBloom.TranslateTo(0, -55, 125, Easing.SpringOut),
+                btnBloom.FadeTo(0, 250, Easing.SpringOut),
+                gridBloom.FadeTo(1, 250, Easing.SpringOut),
             });
 
+            IsOpen = true;
             return true;
         }
 
         async Task<bool> StartWilt()
         {
             if (!IsOpen) return false;
+
+            IsOpen = false;
+
             // do animations
             await Task.WhenAll(new Task[]
             {
-                // reset main button
-                btnBloom.ScaleTo(1, 125, Easing.SpringIn),
                 btnBloom.TranslateTo(0, 0, 125, Easing.SpringIn),
-                // move bloom back down
-                gridBloom.TranslateTo(0, 0, 125, Easing.SpringIn),
+                btnBloom.FadeTo(1, 250, Easing.SpringOut),
+                gridBloom.FadeTo(0, 250, Easing.SpringOut),
             });
 
-            IsOpen = false;
             return true;
         }
 
