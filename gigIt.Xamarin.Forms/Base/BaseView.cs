@@ -9,10 +9,10 @@ using MvvmCross.ViewModels;
 
 namespace gigIt.Xamarin.Forms.Views
 {
-    public class BaseView<TViewModel> : MvxContentPage<TViewModel> 
+    public class BasePage<TViewModel> : MvxContentPage<TViewModel> 
         where TViewModel : class, IMvxViewModel
     {
-        public BaseView()
+        public BasePage()
         {
             XamForms.NavigationPage.SetHasNavigationBar(this, false);
             this.BackgroundColor = gigItColors.bodyBG;
