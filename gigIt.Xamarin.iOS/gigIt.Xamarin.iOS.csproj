@@ -165,6 +165,9 @@
     <Reference Include="Xamarin.iOS" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="MvvmCross">
+      <Version>6.3.1</Version>
+    </PackageReference>
     <PackageReference Include="MvvmCross.Forms">
       <Version>6.3.1</Version>
     </PackageReference>

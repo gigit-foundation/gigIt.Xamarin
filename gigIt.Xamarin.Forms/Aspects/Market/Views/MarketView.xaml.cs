@@ -9,14 +9,10 @@ using gigIt.Xamarin.Forms.ViewModels;
 namespace gigIt.Xamarin.Forms.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class MarketView : AspectView
+    public partial class MarketView : AspectView<MarketViewModel>
     {
-        MarketViewModel viewModel;
-
-        public MarketView(AspectViewItem si) : base(si)
+        public MarketView()
         {
-            BindingContext = viewModel = new MarketViewModel(si);
-
             InitializeComponent();
         }
     }

@@ -1,4 +1,7 @@
-﻿using System;
+﻿using gigIt.Xamarin.Forms;
+using MvvmCross.Forms.Platforms.Uap.Core;
+using MvvmCross.Forms.Platforms.Uap.Views;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -18,10 +21,15 @@ using XamForms = Xamarin.Forms;
 
 namespace gigIt.Xamarin.UWP
 {
+    public class UwpApp : MvxWindowsApplication<MvxFormsWindowsSetup<MvxApp, FormApp>, MvxApp, FormApp, MainPage>
+    {
+
+    }
+
     /// <summary>
     /// Provides application-specific behavior to supplement the default Application class.
     /// </summary>
-    sealed partial class App : Application
+    sealed partial class App : UwpApp
     {
         /// <summary>
         /// Initializes the singleton application object.  This is the first line of authored code

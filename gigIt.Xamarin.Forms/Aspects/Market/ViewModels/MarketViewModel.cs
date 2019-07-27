@@ -2,6 +2,9 @@
 using System.Windows.Input;
 
 using Xamarin.Forms;
+
+using MvvmCross.Navigation;
+
 using gigIt.Xamarin.Forms.Models;
 
 namespace gigIt.Xamarin.Forms.ViewModels
@@ -10,8 +13,12 @@ namespace gigIt.Xamarin.Forms.ViewModels
     {
         //public IDataStore<Market> DataStore => DependencyService.Get<IDataStore<Market>>() ?? new MockMarketStore();
 
-        public MarketViewModel(AspectViewItem si) : base(si)
+        public MarketViewModel(IMvxNavigationService navigation, IBloom bloom) : base(navigation, bloom)
         {
+            Id = 5;
+            IconGlyph = gigItIcons.Market;
+            Title = "Market";
+            TitleColor = gigItColors.gigitSky;
         }
     }
 }

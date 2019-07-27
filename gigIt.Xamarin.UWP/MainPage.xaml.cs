@@ -22,12 +22,10 @@ namespace gigIt.Xamarin.UWP
     {
         public MainPage()
         {
-            this.InitializeComponent();
-
             CachedImageRenderer.Init();
             var ignore = typeof(SvgCachedImage);
 
-            LoadApplication(new TheApp());
+            InitializeComponent();
         }
     }
 }

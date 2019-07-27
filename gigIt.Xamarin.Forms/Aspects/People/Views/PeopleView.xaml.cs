@@ -9,14 +9,10 @@ using gigIt.Xamarin.Forms.ViewModels;
 namespace gigIt.Xamarin.Forms.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class PeopleView : AspectView
+    public partial class PeopleView : AspectView<PeopleViewModel>
     {
-        PeopleViewModel viewModel;
-
-        public PeopleView(AspectViewItem si) : base(si)
+        public PeopleView()
         {
-            BindingContext = viewModel = new PeopleViewModel(si);
-
             InitializeComponent();
         }
     }

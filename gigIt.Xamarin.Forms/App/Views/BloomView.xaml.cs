@@ -9,113 +9,66 @@ using System.Windows.Input;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
+using MvvmCross.ViewModels;
+
 using gigIt.Xamarin.Forms.Models;
+using gigIt.Xamarin.Forms.ViewModels;
+using MvvmCross.Forms.Views;
+using MvvmCross.Base;
+using MvvmCross.Binding.BindingContext;
+using MvvmCross;
 
 namespace gigIt.Xamarin.Forms.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class BloomView : ContentView
+    public partial class BloomView : MvxContentView<BloomViewModel>
     {
         public BloomView()
         {
-            Bloom = new Command(async () => await StartBloom());
-            Wilt = new Command(async () => await StartWilt());
-
-            NavToSparks = new Command(() => NavToAspect(1));
-            NavToSkills = new Command(() => NavToAspect(2));
-            NavToPeople = new Command(() => NavToAspect(3));
-            NavToWork   = new Command(() => NavToAspect(4));
-            NavToMarket = new Command(() => NavToAspect(5));
-
-            BindingContext = this;
-
-            CurrentAspect = (Application.Current as TheApp).CurrentAspect;
-
             InitializeComponent();
+            // wire up the animation interaction
+            var set = this.CreateBindingSet<BloomView, BloomViewModel>();
+            set.Bind(this).For(view => view.BloomInteraction).To(viewModel => viewModel.BloomInteraction).OneWay();
+            set.Apply();
         }
 
-        protected bool SetProperty<T>(ref T backingStore, T value, [CallerMemberName]string propertyName = "", Action onChanged = null)
+        private IMvxInteraction<BloomViewModel.BloomAction> _bloomInteraction;
+        public IMvxInteraction<BloomViewModel.BloomAction> BloomInteraction
         {
-            if (EqualityComparer<T>.Default.Equals(backingStore, value))
-                return false;
-            backingStore = value;
-            onChanged?.Invoke();
-            OnPropertyChanged(propertyName);
-            return true;
-        }
-
-        public ICommand Bloom { get; }
-        public ICommand Wilt { get; }
-        public ICommand NavToSparks { get; }
-        public ICommand NavToSkills { get; }
-        public ICommand NavToPeople { get; }
-        public ICommand NavToWork { get; }
-        public ICommand NavToMarket { get; }
-
-        bool isOpen = false;
-        public bool IsOpen
-        {
-            get { return isOpen; }
-            set { SetProperty(ref isOpen, value); }
-        }
-
-        int iconSize = 35;
-        public int IconSize
-        {
-            get { return iconSize; }
-            set { SetProperty(ref iconSize, value); }
-        }
-
-        AspectViewItem currentAspect = null;
-        public AspectViewItem CurrentAspect
-        {
-            get { return currentAspect; }
-            set { SetProperty(ref currentAspect, value); }
-        }
-
-        async Task<bool> StartBloom()
-        {
-            if (IsOpen) return false;
-
-            // do animations
-            await Task.WhenAll(new Task[]
+            get => _bloomInteraction;
+            set
             {
-                btnBloom.TranslateTo(0, -40, 125, Easing.SpringOut),
-                btnBloom.FadeTo(0, 250, Easing.SpringOut),
-                gridBloom.FadeTo(1, 125, Easing.SpringOut),
-            });
+                if (_bloomInteraction != null)
+                    _bloomInteraction.Requested -= OnBloomActionRequested;
 
-            IsOpen = true;
-            return true;
+                _bloomInteraction = value;
+                _bloomInteraction.Requested += OnBloomActionRequested;
+            }
         }
 
-        async Task<bool> StartWilt()
+        private async void OnBloomActionRequested(object sender, MvxValueEventArgs<BloomViewModel.BloomAction> eventArgs)
         {
-            if (!IsOpen) return false;
-
-            IsOpen = false;
-
+            var action = eventArgs.Value;
             // do animations
-            await Task.WhenAll(new Task[]
+            switch (action)
             {
-                btnBloom.TranslateTo(0, 0, 125, Easing.SpringIn),
-                btnBloom.FadeTo(1, 250, Easing.SpringOut),
-                gridBloom.FadeTo(0, 125, Easing.SpringOut),
-            });
-
-            return true;
-        }
-
-        async void NavToAspect(int sid)
-        {
-            await StartWilt();
-            CurrentAspect = await (Application.Current as TheApp).NavigateToAspect(sid);
-        }
-
-        public async void ToggleBloom(object sender, EventArgs e)
-        {
-            if (IsOpen) await StartWilt();
-            else await StartBloom();
+                case BloomViewModel.BloomAction.Bloom:
+                    await Task.WhenAll(new Task[]
+                    {
+                        btnBloom.TranslateTo(0, -40, 125, Easing.SpringOut),
+                        btnBloom.FadeTo(0, 250, Easing.SpringOut),
+                        gridBloom.FadeTo(1, 125, Easing.SpringOut),
+                    });
+                    break;
+                case BloomViewModel.BloomAction.Wilt:
+                    await Task.WhenAll(new Task[]
+                    {
+                        btnBloom.TranslateTo(0, 0, 125, Easing.SpringIn),
+                        btnBloom.FadeTo(1, 250, Easing.SpringOut),
+                        gridBloom.FadeTo(0, 125, Easing.SpringOut),
+                    });
+                    break;
+            }
         }
     }
 }

@@ -2,6 +2,9 @@
 using System.Windows.Input;
 
 using Xamarin.Forms;
+
+using MvvmCross.Navigation;
+
 using gigIt.Xamarin.Forms.Models;
 
 namespace gigIt.Xamarin.Forms.ViewModels
@@ -10,8 +13,12 @@ namespace gigIt.Xamarin.Forms.ViewModels
     {
         //public IDataStore<Gigs> DataStore => DependencyService.Get<IDataStore<Gigs>>() ?? new MockGigsStore();
 
-        public GigsViewModel(AspectViewItem si) : base(si)
+        public GigsViewModel(IMvxNavigationService navigation, IBloom bloom) : base(navigation, bloom)
         {
+            Id = 4;
+            IconGlyph = gigItIcons.Work;
+            Title = "Gigs";
+            TitleColor = gigItColors.gigitEarth;
         }
     }
 }

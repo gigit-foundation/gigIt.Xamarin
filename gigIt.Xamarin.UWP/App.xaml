@@ -1,8 +1,8 @@
-﻿<Application
+﻿<local:UwpApp
     x:Class="gigIt.Xamarin.UWP.App"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:gigIt.Xamarin.UWP"
     RequestedTheme="Dark">
 
-</Application>
+</local:UwpApp>

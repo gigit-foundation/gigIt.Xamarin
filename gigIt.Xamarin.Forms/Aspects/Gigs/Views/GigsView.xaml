@@ -5,8 +5,8 @@
     xmlns:v="clr-namespace:gigIt.Xamarin.Forms.Views"
     xmlns:vm="clr-namespace:gigIt.Xamarin.Forms.ViewModels"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    x:Class="gigIt.Xamarin.Forms.Views.SkillsView"
-    x:TypeArguments="vm:SkillsViewModel">
+    x:Class="gigIt.Xamarin.Forms.Views.GigsView"
+    x:TypeArguments="vm:GigsViewModel">
     <Grid BackgroundColor="{Static g:gigItColors.bodyBG}" 
           VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
         <Grid.RowDefinitions>

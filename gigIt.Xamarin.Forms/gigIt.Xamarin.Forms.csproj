@@ -13,6 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="MvvmCross" Version="6.3.1" />
     <PackageReference Include="MvvmCross.Forms" Version="6.3.1" />
     <PackageReference Include="Xamarin.FFImageLoading.Svg.Forms" Version="2.4.11.982" />
     <PackageReference Include="Xamarin.Forms" Version="4.1.0.618606" />
@@ -32,11 +33,15 @@
 
   <ItemGroup>
     <Folder Include=".recycle\" />
+    <Folder Include="App\Models\" />
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Aspects\Gigs\Views\MarketView.xaml.cs">
-      <DependentUpon>%(Filename)</DependentUpon>
+    <Compile Update="App\FormApp.xaml.cs">
+      <DependentUpon>FormApp.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Aspects\Gigs\Views\GigsView.xaml.cs">
+      <DependentUpon>GigsView.xaml</DependentUpon>
     </Compile>
     <Compile Update="Aspects\Market\Views\MarketView.xaml.cs">
       <DependentUpon>MarketView.xaml</DependentUpon>

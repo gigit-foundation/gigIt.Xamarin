@@ -14,14 +14,10 @@ using gigIt.Xamarin.Forms.ViewModels;
 namespace gigIt.Xamarin.Forms.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class SparksView : AspectView
+    public partial class SparksView : AspectView<SparksViewModel>
     {
-        SparksViewModel viewModel;
-
-        public SparksView(AspectViewItem si = null) : base(si)
+        public SparksView()
         {
-            BindingContext = viewModel = new SparksViewModel(si);
-
             InitializeComponent();
         }
 
@@ -46,8 +42,8 @@ namespace gigIt.Xamarin.Forms.Views
         {
             base.OnAppearing();
 
-            if (viewModel.Items.Count == 0)
-                viewModel.LoadItemsCommand.Execute(null);
+            if (ViewModel.Items.Count == 0)
+                ViewModel.LoadItemsCommand.Execute(null);
         }
     }
 }

@@ -4,9 +4,13 @@ using System.Text;
 using XamForms = Xamarin.Forms;
 using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
 
+using MvvmCross.Forms.Views;
+using MvvmCross.ViewModels;
+
 namespace gigIt.Xamarin.Forms.Views
 {
-    public class BaseView : XamForms.ContentPage
+    public class BaseView<TViewModel> : MvxContentPage<TViewModel> 
+        where TViewModel : class, IMvxViewModel
     {
         public BaseView()
         {

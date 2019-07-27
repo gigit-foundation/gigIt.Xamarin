@@ -1,11 +1,14 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:b="clr-namespace:gigIt.Xamarin.Forms"
-             xmlns:ctrls="clr-namespace:gigIt.Xamarin.Forms.Controls"
-             xmlns:g="clr-namespace:gigIt.Xamarin"
-             xmlns:svg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
-             x:Class="gigIt.Xamarin.Forms.Views.BloomView">
+<mvxv:MvxContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+                     xmlns:mvxv="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
+                     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                     xmlns:b="clr-namespace:gigIt.Xamarin.Forms"
+                     xmlns:vm="clr-namespace:gigIt.Xamarin.Forms.ViewModels"
+                     xmlns:ctrls="clr-namespace:gigIt.Xamarin.Forms.Controls"
+                     xmlns:g="clr-namespace:gigIt.Xamarin"
+                     xmlns:svg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+                     x:Class="gigIt.Xamarin.Forms.Views.BloomView"
+                     x:TypeArguments="vm:BloomViewModel">
     <ContentView.Resources>
         <ResourceDictionary>
             <b:NotConverter x:Key="notConverter"/>
@@ -99,4 +102,4 @@
             </Grid>
         </Grid>
     </ContentView.Content>
-</ContentView>
+</mvxv:MvxContentView>

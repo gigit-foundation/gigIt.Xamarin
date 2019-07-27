@@ -5,6 +5,8 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 
+using MvvmCross.Navigation;
+
 using gigIt.Xamarin.Forms.Models;
 using gigIt.Xamarin.Forms.Views;
 using gigIt.Xamarin.Services;
@@ -18,8 +20,13 @@ namespace gigIt.Xamarin.Forms.ViewModels
         public ObservableCollection<Spark> Items { get; set; }
         public Command LoadItemsCommand { get; set; }
 
-        public SparksViewModel(AspectViewItem si) : base(si)
+        public SparksViewModel(IMvxNavigationService navigation, IBloom bloom) : base(navigation, bloom)
         {
+            Id = 1;
+            IconGlyph = gigItIcons.Spark;
+            Title = "Sparks";
+            TitleColor = gigItColors.gigitSpark;
+
             Items = new ObservableCollection<Spark>();
             LoadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand());
 

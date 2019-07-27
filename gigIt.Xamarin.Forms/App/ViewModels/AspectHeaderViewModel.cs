@@ -1,10 +1,12 @@
-﻿//using System;
-//using System.Collections.Generic;
-//using System.Text;
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
 
-//namespace gigIt.Xamarin.Forms.ViewModels
-//{
-//    public class AspectHeaderViewModel : AspectViewModel
-//    {
-//    }
-//}
+using gigIt.Xamarin.Forms.Models;
+
+namespace gigIt.Xamarin.Forms.ViewModels
+{
+    public class AspectHeaderViewModel : BaseViewModel
+    {
+    }
+}

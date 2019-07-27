@@ -9,14 +9,10 @@ using gigIt.Xamarin.Forms.ViewModels;
 namespace gigIt.Xamarin.Forms.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class SkillsView : AspectView
+    public partial class SkillsView : AspectView<SkillsViewModel>
     {
-        SkillsViewModel viewModel;
-
-        public SkillsView(AspectViewItem si) : base(si)
+        public SkillsView()
         {
-            BindingContext = viewModel = new SkillsViewModel(si);
-
             InitializeComponent();
         }
     }

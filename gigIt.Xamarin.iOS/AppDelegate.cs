@@ -4,6 +4,8 @@ using System.Linq;
 using Foundation;
 using UIKit;
 
+using MvvmCross.Forms.Platforms.Ios.Core;
+
 using FFImageLoading.Forms.Platform;
 using FFImageLoading.Svg.Forms;
 
@@ -15,7 +17,7 @@ namespace gigIt.Xamarin.iOS
     // User Interface of the application, as well as listening (and optionally responding) to 
     // application events from iOS.
     [Register("AppDelegate")]
-    public partial class AppDelegate : global::Xamarin.Forms.Platform.iOS.FormsApplicationDelegate
+    public partial class AppDelegate : MvxFormsApplicationDelegate<MvxFormsIosSetup<MvxApp, FormApp>, MvxApp, FormApp>
     {
         //
         // This method is invoked when the application has loaded and is ready to run. In this 
@@ -26,12 +28,8 @@ namespace gigIt.Xamarin.iOS
         //
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
-            global::Xamarin.Forms.Forms.Init();
-
             CachedImageRenderer.Init();
             var ignore = typeof(SvgCachedImage);
-
-            LoadApplication(new TheApp());
 
             return base.FinishedLaunching(app, options);
         }
