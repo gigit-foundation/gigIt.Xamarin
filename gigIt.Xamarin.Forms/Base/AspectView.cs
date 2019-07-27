@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-using gigIt.Xamarin.Models;
+using gigIt.Xamarin.Forms.Models;
 
-namespace gigIt.Xamarin.Views
+namespace gigIt.Xamarin.Forms.Views
 {
     public class AspectView : BaseView
     {

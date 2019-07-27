@@ -2,9 +2,9 @@
 using System.Windows.Input;
 
 using Xamarin.Forms;
-using gigIt.Xamarin.Models;
+using gigIt.Xamarin.Forms.Models;
 
-namespace gigIt.Xamarin.ViewModels
+namespace gigIt.Xamarin.Forms.ViewModels
 {
     public class GigsViewModel : AspectViewModel
     {

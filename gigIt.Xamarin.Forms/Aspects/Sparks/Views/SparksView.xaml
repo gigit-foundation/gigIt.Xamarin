@@ -2,9 +2,9 @@
 <v:AspectView
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:g="clr-namespace:gigIt.Xamarin"
-    xmlns:v="clr-namespace:gigIt.Xamarin.Views"
+    xmlns:v="clr-namespace:gigIt.Xamarin.Forms.Views"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    x:Class="gigIt.Xamarin.Views.SparksView"
+    x:Class="gigIt.Xamarin.Forms.Views.SparksView"
     ControlTemplate="{StaticResource MainPageTemplate}"
     Title="{Binding Title}"
     x:Name="SparksPage">

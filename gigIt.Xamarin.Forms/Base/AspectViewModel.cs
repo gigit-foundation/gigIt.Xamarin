@@ -8,11 +8,9 @@ using System.Collections.ObjectModel;
 
 using Xamarin.Forms;
 
-using gigIt.Xamarin.Models;
-using gigIt.Xamarin.Services;
-using gigIt.Xamarin.Views;
+using gigIt.Xamarin.Forms.Models;
 
-namespace gigIt.Xamarin.ViewModels
+namespace gigIt.Xamarin.Forms.ViewModels
 {
     public class AspectViewModel : BaseViewModel
     {

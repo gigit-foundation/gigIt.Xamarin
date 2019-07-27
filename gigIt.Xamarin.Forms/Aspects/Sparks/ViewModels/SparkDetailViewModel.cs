@@ -1,8 +1,8 @@
 ﻿using System;
 
-using gigIt.Xamarin.Models;
+using gigIt.Xamarin.Forms.Models;
 
-namespace gigIt.Xamarin.ViewModels
+namespace gigIt.Xamarin.Forms.ViewModels
 {
     public class SparkDetailViewModel : BaseViewModel
     {

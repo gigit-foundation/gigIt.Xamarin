@@ -7,6 +7,8 @@ using UIKit;
 using FFImageLoading.Forms.Platform;
 using FFImageLoading.Svg.Forms;
 
+using gigIt.Xamarin.Forms;
+
 namespace gigIt.Xamarin.iOS
 {
     // The UIApplicationDelegate for the application. This class is responsible for launching the 

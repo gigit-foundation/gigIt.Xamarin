@@ -4,7 +4,7 @@ using System.Text;
 using XamForms = Xamarin.Forms;
 using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
 
-namespace gigIt.Xamarin.Views
+namespace gigIt.Xamarin.Forms.Views
 {
     public class BaseView : XamForms.ContentPage
     {

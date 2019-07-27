@@ -6,12 +6,11 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-using gigIt.Xamarin.Views;
-using gigIt.Xamarin.Models;
-using gigIt.Xamarin.ViewModels;
+using gigIt.Xamarin.Forms.Views;
+using gigIt.Xamarin.Forms.Models;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
-namespace gigIt.Xamarin
+namespace gigIt.Xamarin.Forms
 {
     public partial class TheApp : Application
     {

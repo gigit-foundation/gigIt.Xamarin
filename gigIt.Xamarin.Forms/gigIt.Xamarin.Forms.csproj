@@ -19,6 +19,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Update="App\Views\AspectHeaderView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="App\Views\BloomView.xaml">
       <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>
@@ -29,7 +32,6 @@
 
   <ItemGroup>
     <Folder Include=".recycle\" />
-    <Folder Include="App\ViewModels\" />
   </ItemGroup>
 
   <ItemGroup>

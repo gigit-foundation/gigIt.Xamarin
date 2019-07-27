@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using gigIt.Xamarin.Views;
 using Xamarin.Forms;
 
-namespace gigIt.Xamarin.Models
+using gigIt.Xamarin.Forms.Views;
+
+namespace gigIt.Xamarin.Forms.Models
 {
     public class AspectViewItem
     {

@@ -5,11 +5,11 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 
-using gigIt.Xamarin.Models;
-using gigIt.Xamarin.Views;
+using gigIt.Xamarin.Forms.Models;
+using gigIt.Xamarin.Forms.Views;
 using gigIt.Xamarin.Services;
 
-namespace gigIt.Xamarin.ViewModels
+namespace gigIt.Xamarin.Forms.ViewModels
 {
     public class SparksViewModel : AspectViewModel
     {

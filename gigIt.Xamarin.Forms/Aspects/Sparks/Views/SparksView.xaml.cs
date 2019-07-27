@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-using gigIt.Xamarin.Models;
-using gigIt.Xamarin.Views;
-using gigIt.Xamarin.ViewModels;
+using gigIt.Xamarin.Forms.Models;
+using gigIt.Xamarin.Forms.Views;
+using gigIt.Xamarin.Forms.ViewModels;
 
-namespace gigIt.Xamarin.Views
+namespace gigIt.Xamarin.Forms.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class SparksView : AspectView

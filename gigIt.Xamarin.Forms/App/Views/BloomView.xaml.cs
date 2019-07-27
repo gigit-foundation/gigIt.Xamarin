@@ -9,9 +9,9 @@ using System.Windows.Input;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-using gigIt.Xamarin.Models;
+using gigIt.Xamarin.Forms.Models;
 
-namespace gigIt.Xamarin.App.Views
+namespace gigIt.Xamarin.Forms.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class BloomView : ContentView

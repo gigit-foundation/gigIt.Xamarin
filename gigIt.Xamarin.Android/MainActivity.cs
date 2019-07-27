@@ -10,6 +10,8 @@ using Android.OS;
 using FFImageLoading.Forms.Platform;
 using FFImageLoading.Svg.Forms;
 
+using gigIt.Xamarin.Forms;
+
 namespace gigIt.Xamarin.Droid
 {
     [Activity(Label = "gigIt", Icon = "@mipmap/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]

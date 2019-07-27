@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using gigIt.Xamarin.Models;
+using gigIt.Xamarin.Forms.Models;
 
 namespace gigIt.Xamarin.Services
 {

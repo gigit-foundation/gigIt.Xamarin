@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace gigIt.Xamarin.Models
+namespace gigIt.Xamarin.Forms.Models
 {
     public class Spark
     {
