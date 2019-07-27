@@ -59,7 +59,7 @@ namespace gigIt.Xamarin.App.Views
             set { SetProperty(ref isOpen, value); }
         }
 
-        int iconSize = 40;
+        int iconSize = 35;
         public int IconSize
         {
             get { return iconSize; }

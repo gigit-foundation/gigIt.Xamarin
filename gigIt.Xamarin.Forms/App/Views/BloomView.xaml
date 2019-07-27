@@ -80,7 +80,7 @@
                                    Command="{Binding NavToMarket}"/>
                 <ctrls:gigItIconButton BackgroundColor="{Static g:gigItColors.headerBG}"
                                    VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"
-                                   Text="{Static g:gigItIcons.CloseButton2}" FontSize="30"
+                                   Text="{Static g:gigItIcons.CloseButton2}" FontSize="33"
                                    TextColor="{Static g:gigItColors.headerFG}"
                                    HeightRequest="50" WidthRequest="50" CornerRadius="25"
                                    Grid.Column="4" Grid.ColumnSpan="3"
