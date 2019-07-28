@@ -81,16 +81,15 @@
                                    Grid.Column="0" Grid.ColumnSpan="3"
                                    Grid.Row="1" Grid.RowSpan="3"
                                    Command="{Binding NavToMarket}"/>
-                <!--
                 <ctrls:gigItIconButton BackgroundColor="{Static g:gigItColors.headerBG}"
                                    VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"
-                                   Text="{Static g:gigItIcons.Gigit}" FontSize="35"
+                                   Text="{Static g:gigItIcons.Gigit}" FontSize="28"
                                    TextColor="{Static g:gigItColors.headerFG}"
                                    HeightRequest="50" WidthRequest="50" CornerRadius="25"
                                    Grid.Column="4" Grid.ColumnSpan="3"
                                    Grid.Row="3" Grid.RowSpan="3"
                                    Command="{Binding Wilt}"/>
-                -->
+                <!--
                 <Grid VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"
                       Grid.Column="4" Grid.ColumnSpan="3"
                       Grid.Row="3" Grid.RowSpan="3">
@@ -102,6 +101,7 @@
                                         HeightRequest="40" WidthRequest="40"
                                         Margin="5"/>
                 </Grid>
+                -->
             </Grid>
             <Grid x:Name="btnBloom" IsVisible="{Binding IsOpen, Converter={StaticResource notConverter}}"
                     HorizontalOptions="Center" Padding="10">

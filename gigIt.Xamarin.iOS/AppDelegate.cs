@@ -28,10 +28,10 @@ namespace gigIt.Xamarin.iOS
         //
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
-            var result = base.FinishedLaunching(app, options);
-
             CachedImageRenderer.Init();
             var ignore = typeof(SvgCachedImage);
+
+            var result = base.FinishedLaunching(app, options);
 
             return result;
         }

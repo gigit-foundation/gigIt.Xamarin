@@ -63,7 +63,7 @@ namespace gigIt.Xamarin.Forms.ViewModels
         async void NavToAspect<TViewModel>() where TViewModel : class, IMvxViewModel
         {
             await Navigation.Navigate<TViewModel>();
-            StartWilt();
+            // StartWilt();
         }
 
         private MvxInteraction<BloomAction> _bloomInteraction = new MvxInteraction<BloomAction>();
