@@ -25,11 +25,12 @@ namespace gigIt.Xamarin.Forms.Views
     {
         public BloomView()
         {
-            InitializeComponent();
             // wire up the animation interaction
             var set = this.CreateBindingSet<BloomView, BloomViewModel>();
             set.Bind(this).For(view => view.BloomInteraction).To(viewModel => viewModel.BloomInteraction).OneWay();
             set.Apply();
+
+            InitializeComponent();
         }
 
         private IMvxInteraction<BloomViewModel.BloomAction> _bloomInteraction;

@@ -86,7 +86,7 @@ namespace gigIt.Xamarin.Forms.ViewModels
 
             IsOpen = false;
 
-            _bloomInteraction.Raise(BloomAction.Bloom);
+            _bloomInteraction.Raise(BloomAction.Wilt);
 
             return true;
         }
