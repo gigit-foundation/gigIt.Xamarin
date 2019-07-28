@@ -57,6 +57,8 @@ namespace gigIt.Xamarin
         public const string Torch = "\ue029";
         public const string Spark = "\ue02a";
         public const string Gigit = "\ue031";
+        public const string People = "\ue032";
+        public const string Close = "\ue033";
     }
 
 }
