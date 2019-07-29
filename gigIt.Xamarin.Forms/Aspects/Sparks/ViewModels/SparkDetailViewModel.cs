@@ -1,6 +1,6 @@
 ﻿using System;
 
-using gigIt.Xamarin.Forms.Models;
+using gigIt.Model;
 
 namespace gigIt.Xamarin.Forms.ViewModels
 {

@@ -7,7 +7,6 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 using gigIt.Xamarin.Forms.Views;
-using gigIt.Xamarin.Forms.Models;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace gigIt.Xamarin.Forms

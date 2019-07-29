@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-using gigIt.Xamarin.Forms.Models;
+using gigIt.Model;
 using gigIt.Xamarin.Forms.Views;
 using gigIt.Xamarin.Forms.ViewModels;
 

@@ -11,7 +11,6 @@ using Xamarin.Forms.Xaml;
 
 using MvvmCross.ViewModels;
 
-using gigIt.Xamarin.Forms.Models;
 using gigIt.Xamarin.Forms.ViewModels;
 using MvvmCross.Forms.Views;
 using MvvmCross.Base;

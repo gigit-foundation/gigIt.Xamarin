@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-using gigIt.Xamarin.Forms.Models;
+using gigIt.Model;
 
 namespace gigIt.Xamarin.Forms.Views
 {
@@ -17,10 +17,10 @@ namespace gigIt.Xamarin.Forms.Views
         {
             InitializeComponent();
 
-            Item = new Spark
+            Item = new Spark (Guid.NewGuid())
             {
-                Text = "Item name",
-                Description = "This is an item description."
+                Title = "New Spark!",
+                Notes = "This is an item description."
             };
 
             BindingContext = this;

@@ -3,7 +3,7 @@
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-using gigIt.Xamarin.Forms.Models;
+using gigIt.Model;
 using gigIt.Xamarin.Forms.ViewModels;
 
 namespace gigIt.Xamarin.Forms.Views
@@ -24,10 +24,10 @@ namespace gigIt.Xamarin.Forms.Views
         {
             InitializeComponent();
 
-            var item = new Spark
+            var item = new Spark(Guid.NewGuid())
             {
-                Text = "Item 1",
-                Description = "This is an item description."
+                Title = "New Spark",
+                Notes = "Welcome to gigIt! This Spark will remain in your daily list until you decide what to do with it :)"
             };
 
             viewModel = new SparkDetailViewModel(item);

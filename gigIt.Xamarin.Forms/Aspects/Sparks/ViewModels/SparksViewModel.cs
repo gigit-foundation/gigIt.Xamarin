@@ -7,9 +7,9 @@ using Xamarin.Forms;
 
 using MvvmCross.Navigation;
 
-using gigIt.Xamarin.Forms.Models;
 using gigIt.Xamarin.Forms.Views;
 using gigIt.Xamarin.Services;
+using gigIt.Model;
 
 namespace gigIt.Xamarin.Forms.ViewModels
 {

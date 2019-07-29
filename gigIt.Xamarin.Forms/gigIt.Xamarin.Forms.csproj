@@ -34,6 +34,11 @@
   <ItemGroup>
     <Folder Include=".recycle\" />
     <Folder Include="App\Models\" />
+    <Folder Include="Aspects\Sparks\Models\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\gigIt.Core\gigIt.Core.csproj" />
   </ItemGroup>
 
   <ItemGroup>

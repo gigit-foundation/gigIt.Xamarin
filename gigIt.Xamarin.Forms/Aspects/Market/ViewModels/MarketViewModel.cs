@@ -5,8 +5,6 @@ using Xamarin.Forms;
 
 using MvvmCross.Navigation;
 
-using gigIt.Xamarin.Forms.Models;
-
 namespace gigIt.Xamarin.Forms.ViewModels
 {
     public class MarketViewModel : AspectViewModel

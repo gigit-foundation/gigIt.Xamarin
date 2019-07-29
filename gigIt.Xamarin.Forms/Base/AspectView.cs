@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Text;
 
-using gigIt.Xamarin.Forms.Models;
 using MvvmCross.Forms.Presenters.Attributes;
 using MvvmCross.ViewModels;
 

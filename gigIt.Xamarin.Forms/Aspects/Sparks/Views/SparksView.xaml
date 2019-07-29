@@ -30,11 +30,11 @@
                     <DataTemplate>
                         <ViewCell>
                             <StackLayout Padding="10">
-                                <Label Text="{Binding Text}" TextColor="{Static g:gigItColors.bodyFG}"
+                                <Label Text="{Binding Title}" TextColor="{Static g:gigItColors.bodyFG}"
                             LineBreakMode="NoWrap" 
                             Style="{DynamicResource ListItemTextStyle}" 
                             FontSize="16" />
-                                <Label Text="{Binding Description}" TextColor="{Static g:gigItColors.bodyFG}"
+                                <Label Text="{Binding Notes}" TextColor="{Static g:gigItColors.bodyFG}"
                             LineBreakMode="NoWrap"
                             Style="{DynamicResource ListItemDetailTextStyle}"
                             FontSize="13" />
