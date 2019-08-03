@@ -27,7 +27,7 @@ namespace gigIt.Xamarin.Forms.Views
             if (item == null)
                 return;
 
-            await Navigation.PushAsync(new ItemDetailPage(new SparkDetailViewModel(item)));
+            await Navigation.PushAsync(new ItemDetailPage(new SparkTileViewModel(item)));
 
             // Manually deselect item.
             ItemsListView.SelectedItem = null;

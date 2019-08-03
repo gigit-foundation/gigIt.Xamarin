@@ -4,11 +4,12 @@ using gigIt.Model;
 
 namespace gigIt.Xamarin.Forms.ViewModels
 {
-    public class SparkDetailViewModel : BaseViewModel
+    public class SparkTileViewModel : BaseViewModel
     {
-        public Spark Spark { get; }
+        public ISpark Spark { get; }
 
-        public SparkDetailViewModel(Spark item)
+
+        public SparkTileViewModel(ISpark item)
         {
             Spark = item;
         }

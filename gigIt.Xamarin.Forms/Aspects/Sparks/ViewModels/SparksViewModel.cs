@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 
+using MvvmCross;
 using MvvmCross.Navigation;
 
 using gigIt.Xamarin.Forms.Views;
@@ -17,7 +18,7 @@ namespace gigIt.Xamarin.Forms.ViewModels
     {
         public IDataStore<Spark> DataStore => DependencyService.Get<IDataStore<Spark>>() ?? new MockSparksStore();
 
-        public ObservableCollection<Spark> Items { get; set; }
+        public ObservableCollection<SparkTileViewModel> Items { get; set; }
         public Command LoadItemsCommand { get; set; }
 
         public SparksViewModel(IMvxNavigationService navigation, IBloom bloom) : base(navigation, bloom)
@@ -27,14 +28,16 @@ namespace gigIt.Xamarin.Forms.ViewModels
             Title = "Sparks";
             TitleColor = gigItColors.gigitSpark;
 
-            Items = new ObservableCollection<Spark>();
+            Items = new ObservableCollection<SparkTileViewModel>();
             LoadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand());
 
             MessagingCenter.Subscribe<NewItemPage, Spark>(this, "AddItem", async (obj, item) =>
             {
-                var newItem = item as Spark;
+                var spark = item as Spark;
+                //var newItem = Mvx.IoCProvider.IoCConstruct<SparkTileViewModel>(spark);
+                var newItem = new SparkTileViewModel(spark);
                 Items.Add(newItem);
-                await DataStore.AddItemAsync(newItem);
+                await DataStore.AddItemAsync(spark);
             });
         }
 
@@ -49,9 +52,11 @@ namespace gigIt.Xamarin.Forms.ViewModels
             {
                 Items.Clear();
                 var items = await DataStore.GetItemsAsync(true);
-                foreach (var item in items)
+                foreach (var spark in items)
                 {
-                    Items.Add(item);
+                    //var tile = Mvx.IoCProvider.IoCConstruct<SparkTileViewModel>(spark);
+                    var tile = new SparkTileViewModel(spark);
+                    Items.Add(tile);
                 }
             }
             catch (Exception ex)

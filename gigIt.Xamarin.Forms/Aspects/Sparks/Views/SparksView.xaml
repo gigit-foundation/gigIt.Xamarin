@@ -28,18 +28,7 @@
                 ItemSelected="OnItemSelected">
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <ViewCell>
-                            <StackLayout Padding="10">
-                                <Label Text="{Binding Title}" TextColor="{Static g:gigItColors.bodyFG}"
-                            LineBreakMode="NoWrap" 
-                            Style="{DynamicResource ListItemTextStyle}" 
-                            FontSize="16" />
-                                <Label Text="{Binding Notes}" TextColor="{Static g:gigItColors.bodyFG}"
-                            LineBreakMode="NoWrap"
-                            Style="{DynamicResource ListItemDetailTextStyle}"
-                            FontSize="13" />
-                            </StackLayout>
-                        </ViewCell>
+                        <v:SparkTileView />
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>

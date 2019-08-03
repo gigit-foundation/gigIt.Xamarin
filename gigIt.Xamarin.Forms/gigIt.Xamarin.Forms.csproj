@@ -26,6 +26,9 @@
     <EmbeddedResource Update="App\Views\BloomView.xaml">
       <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Update="Aspects\Sparks\Views\SparkTileView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="D:\Source\alcheByte\gigIt\gigIt.Xamarin\gigIt.Xamarin\App\App.xaml">
       <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>
@@ -53,6 +56,9 @@
     </Compile>
     <Compile Update="Aspects\People\Views\PeopleView.xaml.cs">
       <DependentUpon>PeopleView.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Aspects\Sparks\Views\SparkTileView.xaml.cs">
+      <DependentUpon>SparkTileView.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
 

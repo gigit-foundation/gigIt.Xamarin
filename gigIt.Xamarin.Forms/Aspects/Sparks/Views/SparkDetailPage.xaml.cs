@@ -11,9 +11,9 @@ namespace gigIt.Xamarin.Forms.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ItemDetailPage : ContentPage
     {
-        SparkDetailViewModel viewModel;
+        SparkTileViewModel viewModel;
 
-        public ItemDetailPage(SparkDetailViewModel viewModel)
+        public ItemDetailPage(SparkTileViewModel viewModel)
         {
             InitializeComponent();
 
@@ -30,7 +30,7 @@ namespace gigIt.Xamarin.Forms.Views
                 Notes = "Welcome to gigIt! This Spark will remain in your daily list until you decide what to do with it :)"
             };
 
-            viewModel = new SparkDetailViewModel(item);
+            viewModel = new SparkTileViewModel(item);
             BindingContext = viewModel;
         }
     }
