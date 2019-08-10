@@ -4,8 +4,8 @@
              x:Class="gigIt.Xamarin.Forms.Views.ItemDetailPage">
     <StackLayout Spacing="20" Padding="15">
         <Label Text="Title:" FontSize="Small" />
-        <Label Text="{Binding Item.Title}" FontSize="Title"/>
+        <Label Text="{Binding Spark.Title}" FontSize="Title"/>
         <Label Text="Notes:" FontSize="Small" />
-        <Label Text="{Binding Item.Description}" FontSize="Subtitle"/>
+        <Label Text="{Binding Spark.Notes}" FontSize="Subtitle"/>
     </StackLayout>
 </ContentPage>

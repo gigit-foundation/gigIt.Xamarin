@@ -8,6 +8,7 @@ using System.Collections.ObjectModel;
 
 using Xamarin.Forms;
 
+using MvvmCross;
 using MvvmCross.Navigation;
 
 namespace gigIt.Xamarin.Forms.ViewModels
@@ -16,10 +17,14 @@ namespace gigIt.Xamarin.Forms.ViewModels
     {
         public IMvxNavigationService Navigation { get; }
 
+        public AspectHeaderViewModel Header { get; }
+
         public AspectViewModel(IMvxNavigationService navigation, IBloom bloom)
         {
             Navigation = navigation;
             Bloom = bloom;
+            //Header = Mvx.IoCProvider.Resolve<AspectHeaderViewModel>();
+            Header = new AspectHeaderViewModel(this);
         }
 
         int id;

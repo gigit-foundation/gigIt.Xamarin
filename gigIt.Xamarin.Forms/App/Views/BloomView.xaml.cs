@@ -24,12 +24,12 @@ namespace gigIt.Xamarin.Forms.Views
     {
         public BloomView()
         {
+            InitializeComponent();
+
             // wire up the animation interaction
             var set = this.CreateBindingSet<BloomView, BloomViewModel>();
             set.Bind(this).For(view => view.BloomInteraction).To(viewModel => viewModel.BloomInteraction).OneWay();
             set.Apply();
-
-            InitializeComponent();
         }
 
         private IMvxInteraction<BloomViewModel.BloomAction> _bloomInteraction;
@@ -42,7 +42,9 @@ namespace gigIt.Xamarin.Forms.Views
                     _bloomInteraction.Requested -= OnBloomActionRequested;
 
                 _bloomInteraction = value;
-                _bloomInteraction.Requested += OnBloomActionRequested;
+
+                if (_bloomInteraction != null)
+                    _bloomInteraction.Requested += OnBloomActionRequested;
             }
         }
 

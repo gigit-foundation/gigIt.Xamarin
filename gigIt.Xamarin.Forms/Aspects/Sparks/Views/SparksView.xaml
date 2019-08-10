@@ -14,7 +14,7 @@
             <RowDefinition Height="auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <v:AspectHeaderView />
+        <v:AspectHeaderView BindingContext="{Binding Header}"/>
         <Grid VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Grid.Row="1">
             <ListView x:Name="ItemsListView"
                 BackgroundColor="{Static g:gigItColors.bodyBG}"
@@ -24,7 +24,7 @@
                 RefreshCommand="{Binding LoadItemsCommand}"
                 IsPullToRefreshEnabled="true"
                 IsRefreshing="{Binding IsBusy, Mode=OneWay}"
-                CachingStrategy="RecycleElement"
+                CachingStrategy="RecycleElement" 
                 ItemSelected="OnItemSelected">
                 <ListView.ItemTemplate>
                     <DataTemplate>
