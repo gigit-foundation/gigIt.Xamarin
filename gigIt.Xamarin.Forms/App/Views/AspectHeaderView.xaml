@@ -47,30 +47,30 @@
           <ColumnDefinition Width="60"/>
           <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <ctrls:gigItIconButton Grid.Column="0"
+        <ctrls:gigItIconButton Grid.Column="0" VerticalOptions="Start" HorizontalOptions="End"
             TextColor="{Static g:gigItColors.headerFG}" BackgroundColor="{Static g:gigItColors.headerBG}"
-            Text="{Static g:gigItIcons.News}" FontSize="27"
+            Text="{Static g:gigItIcons.News}" FontSize="24"
             Command="{Binding ShowFeed}"/>
         <Label Grid.Column="0"
                Text="My Feed" BackgroundColor="Transparent" Margin="0,3"
                VerticalTextAlignment="End" HorizontalTextAlignment="Center"
-               FontSize="10" TextColor="{Binding Aspect.TitleColor}"/>
-        <ctrls:gigItIconButton Grid.Column="1"
+               FontSize="9" TextColor="{Binding Aspect.TitleColor}"/>
+        <ctrls:gigItIconButton Grid.Column="1" VerticalOptions="Start" HorizontalOptions="End"
             TextColor="{Static g:gigItColors.headerFG}" BackgroundColor="{Static g:gigItColors.headerBG}"
-            Text="{Static g:gigItIcons.UserFollow}" FontSize="27"
+            Text="{Static g:gigItIcons.UserFollow}" FontSize="24"
             Command="{Binding ShowFavorites}"/>
         <Label Grid.Column="1"
                Text="Following" BackgroundColor="Transparent" Margin="0,3"
                VerticalTextAlignment="End" HorizontalTextAlignment="Center"
-               FontSize="12" TextColor="{Binding Aspect.TitleColor}"/>
-        <ctrls:gigItIconButton Grid.Column="2"
+               FontSize="9" TextColor="{Binding Aspect.TitleColor}"/>
+        <ctrls:gigItIconButton Grid.Column="2" VerticalOptions="Start" HorizontalOptions="End"
             TextColor="{Static g:gigItColors.headerFG}" BackgroundColor="{Static g:gigItColors.headerBG}"
-            Text="{Static g:gigItIcons.Fire3}" FontSize="27"
+            Text="{Static g:gigItIcons.Fire3}" FontSize="24"
             Command="{Binding ShowHot}"/>
         <Label  Grid.Column="2"
                 Text="Hot" BackgroundColor="Transparent" Margin="0,3"
                 VerticalTextAlignment="End" HorizontalTextAlignment="Center"
-                FontSize="12" TextColor="{Binding Aspect.TitleColor}"/>
+                FontSize="9" TextColor="{Binding Aspect.TitleColor}"/>
       </Grid>
       <!--create-->
       <Grid IsVisible="{Binding ShowCreate}">
