@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
-
+using MvvmCross;
 using MvvmCross.Commands;
 using MvvmCross.Navigation;
 using MvvmCross.ViewModels;
@@ -40,11 +40,11 @@ namespace gigIt.Xamarin.Forms.ViewModels
 
         public IMvxCommand Bloom =>       new MvxCommand(() => StartBloom());
         public IMvxCommand Wilt =>        new MvxCommand(() => StartWilt());
-        public IMvxCommand NavToSparks => new MvxCommand(() => NavToAspect<SparksViewModel>());
-        public IMvxCommand NavToSkills => new MvxCommand(() => NavToAspect<SkillsViewModel>());
-        public IMvxCommand NavToPeople => new MvxCommand(() => NavToAspect<PeopleViewModel>());
-        public IMvxCommand NavToWork   => new MvxCommand(() => NavToAspect<GigsViewModel>());
-        public IMvxCommand NavToMarket => new MvxCommand(() => NavToAspect<MarketViewModel>());
+        public IMvxCommand NavToSparks => new MvxCommand(() => NavToAspect<ISparksViewModel>());
+        public IMvxCommand NavToSkills => new MvxCommand(() => NavToAspect<ISkillsViewModel>());
+        public IMvxCommand NavToPeople => new MvxCommand(() => NavToAspect<IPeopleViewModel>());
+        public IMvxCommand NavToWork   => new MvxCommand(() => NavToAspect<IGigsViewModel>());
+        public IMvxCommand NavToMarket => new MvxCommand(() => NavToAspect<IMarketViewModel>());
 
         bool isOpen = false;
         public bool IsOpen
@@ -62,7 +62,8 @@ namespace gigIt.Xamarin.Forms.ViewModels
 
         async void NavToAspect<TViewModel>() where TViewModel : class, IMvxViewModel
         {
-            await Navigation.Navigate<TViewModel>();
+            var vm = Mvx.IoCProvider.Resolve<TViewModel>();
+            await Navigation.Navigate(vm);
             // StartWilt();
         }
 

@@ -8,7 +8,9 @@ using MvvmCross.Navigation;
 
 namespace gigIt.Xamarin.Forms.ViewModels
 {
-    public class GigsViewModel : AspectViewModel
+    public interface IGigsViewModel : IAspectViewModel { }
+
+    public class GigsViewModel : AspectViewModel, IGigsViewModel
     {
         //public IDataStore<Gigs> DataStore => DependencyService.Get<IDataStore<Gigs>>() ?? new MockGigsStore();
 

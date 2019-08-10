@@ -10,10 +10,13 @@ using Xamarin.Forms;
 
 using MvvmCross;
 using MvvmCross.Navigation;
+using MvvmCross.ViewModels;
 
 namespace gigIt.Xamarin.Forms.ViewModels
 {
-    public class AspectViewModel : BaseViewModel
+    public interface IAspectViewModel : IMvxViewModel { }
+
+    public class AspectViewModel : BaseViewModel, IAspectViewModel
     {
         public IMvxNavigationService Navigation { get; }
 

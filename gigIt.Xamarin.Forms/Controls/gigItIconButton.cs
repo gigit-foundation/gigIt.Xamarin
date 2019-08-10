@@ -27,8 +27,6 @@ namespace gigIt.Xamarin.Forms.Controls
                         break;
                     }
             }
-            VerticalOptions = LayoutOptions.Center;
-            HorizontalOptions = LayoutOptions.Center;
         }
     }
 }

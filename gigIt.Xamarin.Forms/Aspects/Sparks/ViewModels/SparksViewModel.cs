@@ -14,7 +14,9 @@ using gigIt.Model;
 
 namespace gigIt.Xamarin.Forms.ViewModels
 {
-    public class SparksViewModel : AspectViewModel
+    public interface ISparksViewModel : IAspectViewModel { }
+
+    public class SparksViewModel : AspectViewModel, ISparksViewModel
     {
         public IDataStore<Spark> DataStore => DependencyService.Get<IDataStore<Spark>>() ?? new MockSparksStore();
 

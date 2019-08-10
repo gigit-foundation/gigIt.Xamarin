@@ -7,7 +7,9 @@ using MvvmCross.Navigation;
 
 namespace gigIt.Xamarin.Forms.ViewModels
 {
-    public class PeopleViewModel : AspectViewModel
+    public interface IPeopleViewModel : IAspectViewModel { }
+
+    public class PeopleViewModel : AspectViewModel, IPeopleViewModel
     {
         //public IDataStore<People> DataStore => DependencyService.Get<IDataStore<People>>() ?? new MockPeopleStore();
 

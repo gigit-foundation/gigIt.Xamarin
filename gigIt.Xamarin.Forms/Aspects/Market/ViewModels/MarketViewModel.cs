@@ -7,7 +7,9 @@ using MvvmCross.Navigation;
 
 namespace gigIt.Xamarin.Forms.ViewModels
 {
-    public class MarketViewModel : AspectViewModel
+    public interface IMarketViewModel : IAspectViewModel { }
+
+    public class MarketViewModel : AspectViewModel, IMarketViewModel
     {
         //public IDataStore<Market> DataStore => DependencyService.Get<IDataStore<Market>>() ?? new MockMarketStore();
 
