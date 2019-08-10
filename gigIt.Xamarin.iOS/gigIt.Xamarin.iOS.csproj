@@ -85,6 +85,7 @@
     </None>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <BundleResource Include="Resources\Fonts\gigit.ttf" />
+    <BundleResource Include="Resources\Fonts\Aller.ttf" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\tab_about.png" />

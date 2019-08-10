@@ -35,7 +35,8 @@
 	<key>UIAppFonts</key>
 	<array>
 		<string>Fonts/gigit.ttf</string>
-	</array>
+    <string>Fonts/Aller.ttf</string>
+  </array>
 	<key>XSLaunchImageAssets</key>
 	<string>Assets.xcassets/LaunchImages.launchimage</string>
 	<key>CFBundleIdentifier</key>

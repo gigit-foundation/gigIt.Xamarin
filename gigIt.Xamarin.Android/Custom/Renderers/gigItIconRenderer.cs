@@ -13,13 +13,13 @@ using Android.Widget;
 using XamForms = Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
 
-[assembly: XamForms.ExportRenderer(typeof(gigIt.Xamarin.Forms.Controls.gigItIconLabel), typeof(gigIt.Xamarin.Droid.Custom.Renderers.gigItLabelRenderer))]
-[assembly: XamForms.ExportRenderer(typeof(gigIt.Xamarin.Forms.Controls.gigItIconButton), typeof(gigIt.Xamarin.Droid.Custom.Renderers.gigItButtonRenderer))]
+[assembly: XamForms.ExportRenderer(typeof(gigIt.Xamarin.Forms.Controls.gigItIconLabel), typeof(gigIt.Xamarin.Droid.Custom.Renderers.gigItIconLabelRenderer))]
+[assembly: XamForms.ExportRenderer(typeof(gigIt.Xamarin.Forms.Controls.gigItIconButton), typeof(gigIt.Xamarin.Droid.Custom.Renderers.gigItIconButtonRenderer))]
 namespace gigIt.Xamarin.Droid.Custom.Renderers
 {
-    public class gigItLabelRenderer : LabelRenderer
+    public class gigItIconLabelRenderer : LabelRenderer
     {
-        public gigItLabelRenderer(Context ctx) : base(ctx)
+        public gigItIconLabelRenderer(Context ctx) : base(ctx)
         {
 
         }
@@ -35,9 +35,9 @@ namespace gigIt.Xamarin.Droid.Custom.Renderers
         }
     }
 
-    public class gigItButtonRenderer : ButtonRenderer
+    public class gigItIconButtonRenderer : ButtonRenderer
     {
-        public gigItButtonRenderer(Context ctx) : base(ctx)
+        public gigItIconButtonRenderer(Context ctx) : base(ctx)
         {
 
         }
