@@ -15,19 +15,20 @@
       <!--main header-->
       <Grid>
         <Grid.ColumnDefinitions>
-          <ColumnDefinition Width="60"/>
+          <ColumnDefinition Width="45"/>
           <ColumnDefinition Width="auto"/>
           <ColumnDefinition Width="*"/>
-          <ColumnDefinition Width="60"/>
+          <ColumnDefinition Width="45"/>
         </Grid.ColumnDefinitions>
         <ctrls:gigItIconButton
             TextColor="{Binding Aspect.TitleColor}" BackgroundColor="{Static g:gigItColors.headerBG}"
             Text="{Binding Aspect.IconGlyph}" FontSize="27"
             Command="{Binding ToggleFilters}"/>
-        <Label Text="{Binding Aspect.Title}" Grid.Column="1" Margin="10"
-            VerticalTextAlignment="Center" HorizontalTextAlignment="Start"
-            FontSize="Large" TextColor="{Binding Aspect.TitleColor}"/>
-        <Entry Grid.Column="2" BackgroundColor="{Static g:gigItColors.bodyBG}" Margin="0,5"
+        <Label Text="{Binding Aspect.Title}" Grid.Column="1" Margin="5,0"
+               VerticalOptions="Center" HorizontalOptions="CenterAndExpand"
+               VerticalTextAlignment="Center" HorizontalTextAlignment="Start"
+               FontSize="Large" TextColor="{Binding Aspect.TitleColor}"/>
+        <Entry Grid.Column="2" BackgroundColor="{Static g:gigItColors.bodyBG}" Margin="0,7"
                Text="{Binding SearchText}" TextColor="{Static g:gigItColors.action}" FontSize="18" HorizontalTextAlignment="End"
                ReturnCommand="{Binding GetSearchResults}"/>
         <ctrls:gigItIconButton Grid.Column="2" VerticalOptions="Center" HorizontalOptions="End" WidthRequest="40"
@@ -42,32 +43,32 @@
       <!--filters-->
       <Grid IsVisible="{Binding ShowFilters}">
         <Grid.ColumnDefinitions>
-          <ColumnDefinition Width="60"/>
-          <ColumnDefinition Width="60"/>
-          <ColumnDefinition Width="60"/>
+          <ColumnDefinition Width="45"/>
+          <ColumnDefinition Width="45"/>
+          <ColumnDefinition Width="45"/>
           <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <ctrls:gigItIconButton Grid.Column="0" VerticalOptions="Start" HorizontalOptions="End"
             TextColor="{Static g:gigItColors.headerFG}" BackgroundColor="{Static g:gigItColors.headerBG}"
-            Text="{Static g:gigItIcons.News}" FontSize="24"
+            Text="{Static g:gigItIcons.News}" FontSize="20"
             Command="{Binding ShowFeed}"/>
-        <Label Grid.Column="0"
+        <Label Grid.Column="0" VerticalOptions="End" HorizontalOptions="Center"
                Text="My Feed" BackgroundColor="Transparent" Margin="0,3"
                VerticalTextAlignment="End" HorizontalTextAlignment="Center"
                FontSize="9" TextColor="{Binding Aspect.TitleColor}"/>
         <ctrls:gigItIconButton Grid.Column="1" VerticalOptions="Start" HorizontalOptions="End"
             TextColor="{Static g:gigItColors.headerFG}" BackgroundColor="{Static g:gigItColors.headerBG}"
-            Text="{Static g:gigItIcons.UserFollow}" FontSize="24"
+            Text="{Static g:gigItIcons.UserFollow}" FontSize="20"
             Command="{Binding ShowFavorites}"/>
-        <Label Grid.Column="1"
+        <Label Grid.Column="1" VerticalOptions="End" HorizontalOptions="Center"
                Text="Following" BackgroundColor="Transparent" Margin="0,3"
                VerticalTextAlignment="End" HorizontalTextAlignment="Center"
                FontSize="9" TextColor="{Binding Aspect.TitleColor}"/>
         <ctrls:gigItIconButton Grid.Column="2" VerticalOptions="Start" HorizontalOptions="End"
             TextColor="{Static g:gigItColors.headerFG}" BackgroundColor="{Static g:gigItColors.headerBG}"
-            Text="{Static g:gigItIcons.Fire3}" FontSize="24"
+            Text="{Static g:gigItIcons.Fire3}" FontSize="20"
             Command="{Binding ShowHot}"/>
-        <Label  Grid.Column="2"
+        <Label  Grid.Column="2" VerticalOptions="End" HorizontalOptions="Center"
                 Text="Hot" BackgroundColor="Transparent" Margin="0,3"
                 VerticalTextAlignment="End" HorizontalTextAlignment="Center"
                 FontSize="9" TextColor="{Binding Aspect.TitleColor}"/>
