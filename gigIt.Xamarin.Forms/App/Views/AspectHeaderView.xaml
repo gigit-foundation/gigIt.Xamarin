@@ -11,9 +11,9 @@
     </ResourceDictionary>
   </ContentView.Resources>
   <ContentView.Content>
-    <StackLayout BackgroundColor="{Static g:gigItColors.headerBG}" Padding="0">
+    <StackLayout BackgroundColor="{Static g:gigItColors.headerBG}" Spacing="0">
       <!--main header-->
-      <Grid>
+      <Grid VerticalOptions="Fill" HorizontalOptions="Fill">
         <Grid.ColumnDefinitions>
           <ColumnDefinition Width="45"/>
           <ColumnDefinition Width="auto"/>
@@ -41,40 +41,43 @@
             Command="{Binding ToggleCreate}"/>
       </Grid>
       <!--filters-->
-      <Grid IsVisible="{Binding ShowFilters}">
+      <Grid IsVisible="{Binding ShowFilters}" VerticalOptions="Fill" HorizontalOptions="Fill">
         <Grid.ColumnDefinitions>
           <ColumnDefinition Width="45"/>
           <ColumnDefinition Width="45"/>
           <ColumnDefinition Width="45"/>
           <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <ctrls:gigItIconButton Grid.Column="0" VerticalOptions="Start" HorizontalOptions="End"
+        <ctrls:gigItIconButton Grid.Column="0" VerticalOptions="StartAndExpand" HorizontalOptions="CenterAndExpand"
             TextColor="{Static g:gigItColors.headerFG}" BackgroundColor="{Static g:gigItColors.headerBG}"
             Text="{Static g:gigItIcons.News}" FontSize="20"
             Command="{Binding ShowFeed}"/>
-        <Label Grid.Column="0" VerticalOptions="End" HorizontalOptions="Center"
-               Text="My Feed" BackgroundColor="Transparent" Margin="0,3"
+        <Label Grid.Column="0" InputTransparent="True"
+               VerticalOptions="End" HorizontalOptions="Center"
+               Text="My Feed" BackgroundColor="Transparent" Margin="0,2"
                VerticalTextAlignment="End" HorizontalTextAlignment="Center"
                FontSize="9" TextColor="{Binding Aspect.TitleColor}"/>
-        <ctrls:gigItIconButton Grid.Column="1" VerticalOptions="Start" HorizontalOptions="End"
+        <ctrls:gigItIconButton Grid.Column="1" VerticalOptions="StartAndExpand" HorizontalOptions="CenterAndExpand"
             TextColor="{Static g:gigItColors.headerFG}" BackgroundColor="{Static g:gigItColors.headerBG}"
             Text="{Static g:gigItIcons.UserFollow}" FontSize="20"
             Command="{Binding ShowFavorites}"/>
-        <Label Grid.Column="1" VerticalOptions="End" HorizontalOptions="Center"
-               Text="Following" BackgroundColor="Transparent" Margin="0,3"
+        <Label Grid.Column="1" InputTransparent="True"
+               VerticalOptions="End" HorizontalOptions="Center"
+               Text="Following" BackgroundColor="Transparent" Margin="0,2"
                VerticalTextAlignment="End" HorizontalTextAlignment="Center"
                FontSize="9" TextColor="{Binding Aspect.TitleColor}"/>
-        <ctrls:gigItIconButton Grid.Column="2" VerticalOptions="Start" HorizontalOptions="End"
+        <ctrls:gigItIconButton Grid.Column="2" InputTransparent="True"
+            VerticalOptions="StartAndExpand" HorizontalOptions="CenterAndExpand"
             TextColor="{Static g:gigItColors.headerFG}" BackgroundColor="{Static g:gigItColors.headerBG}"
             Text="{Static g:gigItIcons.Fire3}" FontSize="20"
             Command="{Binding ShowHot}"/>
         <Label  Grid.Column="2" VerticalOptions="End" HorizontalOptions="Center"
-                Text="Hot" BackgroundColor="Transparent" Margin="0,3"
+                Text="Hot" BackgroundColor="Transparent" Margin="0,2"
                 VerticalTextAlignment="End" HorizontalTextAlignment="Center"
                 FontSize="9" TextColor="{Binding Aspect.TitleColor}"/>
       </Grid>
       <!--create-->
-      <Grid IsVisible="{Binding ShowCreate}">
+      <Grid IsVisible="{Binding ShowCreate}" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
         <ContentPresenter />
       </Grid>
     </StackLayout>
