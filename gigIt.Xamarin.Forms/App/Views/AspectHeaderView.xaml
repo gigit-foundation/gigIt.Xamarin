@@ -2,8 +2,14 @@
 <ContentView xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:g="clr-namespace:gigIt.Xamarin"
+             xmlns:b="clr-namespace:gigIt.Xamarin.Forms"
              xmlns:ctrls="clr-namespace:gigIt.Xamarin.Forms.Controls"
              x:Class="gigIt.Xamarin.Forms.Views.AspectHeaderView">
+  <ContentView.Resources>
+    <ResourceDictionary>
+      <b:EmptyStringConverter x:Key="emptyConverter"/>
+    </ResourceDictionary>
+  </ContentView.Resources>
   <ContentView.Content>
     <StackLayout BackgroundColor="{Static g:gigItColors.headerBG}" Padding="0">
       <!--main header-->
@@ -23,8 +29,11 @@
             FontSize="Large" TextColor="{Binding Aspect.TitleColor}"/>
         <Entry Grid.Column="2" BackgroundColor="{Static g:gigItColors.bodyBG}" Margin="0,5"
                Text="{Binding SearchText}" TextColor="{Static g:gigItColors.action}" FontSize="18" HorizontalTextAlignment="End"
-               Placeholder="{Static g:gigItIcons.Search}" PlaceholderColor="{Static g:gigItColors.headerFG}" 
                ReturnCommand="{Binding GetSearchResults}"/>
+        <ctrls:gigItIconButton Grid.Column="2" VerticalOptions="Center" HorizontalOptions="End" WidthRequest="40"
+                               TextColor="{Static g:gigItColors.headerFG}" BackgroundColor="Transparent"
+                               IsVisible="{Binding SearchText, Converter={StaticResource emptyConverter}}"
+                               Text="{Static g:gigItIcons.Search}" FontSize="22"/>
         <ctrls:gigItIconButton Grid.Column="3"
             TextColor="{Binding Aspect.TitleColor}" BackgroundColor="{Static g:gigItColors.headerBG}"
             Text="{Static g:gigItIcons.AddButton3}" FontSize="27"
@@ -36,22 +45,32 @@
           <ColumnDefinition Width="60"/>
           <ColumnDefinition Width="60"/>
           <ColumnDefinition Width="60"/>
+          <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <ctrls:gigItIconButton
+        <ctrls:gigItIconButton Grid.Column="0"
             TextColor="{Static g:gigItColors.headerFG}" BackgroundColor="{Static g:gigItColors.headerBG}"
-            Text="{Static g:gigItIcons.Fire3}" FontSize="27"
-            Command="{Binding ShowHot}"/>
-        <Label Text="Hot" BackgroundColor="Transparent"
-            VerticalTextAlignment="End" HorizontalTextAlignment="Center"
-            FontSize="7" TextColor="{Binding Aspect.TitleColor}"/>
+            Text="{Static g:gigItIcons.News}" FontSize="27"
+            Command="{Binding ShowFeed}"/>
+        <Label Grid.Column="0"
+               Text="My Feed" BackgroundColor="Transparent" Margin="0,3"
+               VerticalTextAlignment="End" HorizontalTextAlignment="Center"
+               FontSize="10" TextColor="{Binding Aspect.TitleColor}"/>
         <ctrls:gigItIconButton Grid.Column="1"
             TextColor="{Static g:gigItColors.headerFG}" BackgroundColor="{Static g:gigItColors.headerBG}"
             Text="{Static g:gigItIcons.UserFollow}" FontSize="27"
             Command="{Binding ShowFavorites}"/>
-        <ctrls:gigItIconButton
+        <Label Grid.Column="1"
+               Text="Following" BackgroundColor="Transparent" Margin="0,3"
+               VerticalTextAlignment="End" HorizontalTextAlignment="Center"
+               FontSize="12" TextColor="{Binding Aspect.TitleColor}"/>
+        <ctrls:gigItIconButton Grid.Column="2"
             TextColor="{Static g:gigItColors.headerFG}" BackgroundColor="{Static g:gigItColors.headerBG}"
-            Text="{Static g:gigItIcons.News}" FontSize="27"
+            Text="{Static g:gigItIcons.Fire3}" FontSize="27"
             Command="{Binding ShowHot}"/>
+        <Label  Grid.Column="2"
+                Text="Hot" BackgroundColor="Transparent" Margin="0,3"
+                VerticalTextAlignment="End" HorizontalTextAlignment="Center"
+                FontSize="12" TextColor="{Binding Aspect.TitleColor}"/>
       </Grid>
       <!--create-->
       <Grid IsVisible="{Binding ShowCreate}">
