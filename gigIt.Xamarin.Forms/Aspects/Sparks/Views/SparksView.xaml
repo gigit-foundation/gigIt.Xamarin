@@ -1,38 +1,76 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<v:AspectView
-    xmlns="http://xamarin.com/schemas/2014/forms"
-    xmlns:g="clr-namespace:gigIt.Xamarin"
-    xmlns:v="clr-namespace:gigIt.Xamarin.Forms.Views"
-    xmlns:vm="clr-namespace:gigIt.Xamarin.Forms.ViewModels"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    x:Class="gigIt.Xamarin.Forms.Views.SparksView"
-    x:TypeArguments="vm:SparksViewModel"
-    x:Name="SparksPage">
-    <Grid BackgroundColor="{Static g:gigItColors.bodyBG}" 
+<v:AspectView xmlns="http://xamarin.com/schemas/2014/forms"
+              xmlns:g="clr-namespace:gigIt.Xamarin"
+              xmlns:b="clr-namespace:gigIt.Xamarin.Forms"
+              xmlns:ctrls="clr-namespace:gigIt.Xamarin.Forms.Controls"
+              xmlns:v="clr-namespace:gigIt.Xamarin.Forms.Views"
+              xmlns:vm="clr-namespace:gigIt.Xamarin.Forms.ViewModels"
+              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+              x:Class="gigIt.Xamarin.Forms.Views.SparksView"
+              x:TypeArguments="vm:SparksViewModel"
+              x:Name="SparksPage">
+    <Grid BackgroundColor="{Static g:gigItColors.bodyBG}"
           VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <v:AspectHeaderView BindingContext="{Binding Header}"/>
-        <Grid VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Grid.Row="1">
-            <ListView x:Name="ItemsListView"
-                BackgroundColor="{Static g:gigItColors.bodyBG}"
-                ItemsSource="{Binding Items}"
-                VerticalOptions="FillAndExpand"
-                HasUnevenRows="true"
-                RefreshCommand="{Binding LoadItemsCommand}"
-                IsPullToRefreshEnabled="true"
-                IsRefreshing="{Binding IsBusy, Mode=OneWay}"
-                CachingStrategy="RecycleElement" 
-                ItemSelected="OnItemSelected">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <v:SparkTileView />
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-        </Grid>
+        <ScrollView Grid.Row="1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <StackLayout Spacing="0">
+                <!--My Sparks-->
+                <StackLayout HeightRequest="150" BackgroundColor="AliceBlue">
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand"
+                                 BackgroundColor="{Static g:gigItColors.bodyBG}">
+                        <ctrls:gigItIconButton WidthRequest="40" BackgroundColor="Transparent"
+                                               VerticalOptions="Center" HorizontalOptions="Start"
+                                               Text="{Static g:gigItIcons.Tasks}" TextColor="{Static g:gigItColors.bodyFG}" FontSize="20"
+                                               Command="{Binding ConfigMine}"/>
+                        <ctrls:gigItLabel InputTransparent="True"  BackgroundColor="Transparent"
+                                         VerticalOptions="Center" HorizontalOptions="StartAndExpand"  Margin="0,2"
+                                         Text="My Sparks" TextColor="{Static g:gigItColors.bodyFG}" FontSize="Small"
+                                         VerticalTextAlignment="End" HorizontalTextAlignment="Center"/>
+                    </StackLayout>
+                    <v:SparkCollectionView BackgroundColor="{Static g:gigItColors.bodyBG}"
+                                           SelectionMode="Single" SelectedItem="{Binding SelectedSpark}"
+                                           ItemsSource="{Binding MySparks}" ItemsLayout="HorizontalList"/>
+                </StackLayout>
+                <!--Following-->
+                <StackLayout HeightRequest="150" BackgroundColor="AliceBlue">
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand"
+                                 BackgroundColor="{Static g:gigItColors.bodyBG}">
+                        <ctrls:gigItIconButton WidthRequest="40" BackgroundColor="Transparent"
+                                               VerticalOptions="Center" HorizontalOptions="Start"
+                                               Text="{Static g:gigItIcons.UserFollow}" TextColor="{Static g:gigItColors.bodyFG}" FontSize="20"
+                                               Command="{Binding ConfigMine}"/>
+                        <ctrls:gigItLabel InputTransparent="True"  BackgroundColor="Transparent"
+                                         VerticalOptions="Center" HorizontalOptions="StartAndExpand"  Margin="0,2"
+                                         Text="Following" TextColor="{Static g:gigItColors.bodyFG}" FontSize="Small"
+                                         VerticalTextAlignment="End" HorizontalTextAlignment="Center"/>
+                    </StackLayout>
+                    <v:SparkCollectionView BackgroundColor="{Static g:gigItColors.bodyBG}"
+                                           SelectionMode="Single" SelectedItem="{Binding SelectedFollowing}"
+                                           ItemsSource="{Binding Following}" ItemsLayout="HorizontalList"/>
+                </StackLayout>
+                <!--Hot-->
+                <StackLayout HeightRequest="150" BackgroundColor="AliceBlue">
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand"
+                                 BackgroundColor="{Static g:gigItColors.bodyBG}">
+                        <ctrls:gigItIconButton WidthRequest="40" BackgroundColor="Transparent"
+                                               VerticalOptions="Center" HorizontalOptions="Start"
+                                               Text="{Static g:gigItIcons.Fire3}" TextColor="{Static g:gigItColors.bodyFG}" FontSize="20"
+                                               Command="{Binding ConfigMine}"/>
+                        <ctrls:gigItLabel InputTransparent="True"  BackgroundColor="Transparent"
+                                         VerticalOptions="Center" HorizontalOptions="StartAndExpand"  Margin="0,2"
+                                         Text="Hot" TextColor="{Static g:gigItColors.bodyFG}" FontSize="Small"
+                                         VerticalTextAlignment="End" HorizontalTextAlignment="Center"/>
+                    </StackLayout>
+                    <v:SparkCollectionView BackgroundColor="{Static g:gigItColors.bodyBG}"
+                                           SelectionMode="Single" SelectedItem="{Binding SelectedHot}"
+                                           ItemsSource="{Binding Hot}" ItemsLayout="HorizontalList"/>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
         <v:BloomView VerticalOptions="End" HorizontalOptions="Center"
                      BackgroundColor="Transparent" Grid.Row="1"
                      BindingContext="{Binding Bloom}"/>

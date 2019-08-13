@@ -10,9 +10,9 @@ using Xamarin.Forms.Xaml;
 namespace gigIt.Xamarin.Forms.Views
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class SparkTileView : ViewCell
-	{
-		public SparkTileView ()
+	public partial class SparkCollectionView : CollectionView
+    {
+		public SparkCollectionView ()
 		{
 			InitializeComponent ();
 		}

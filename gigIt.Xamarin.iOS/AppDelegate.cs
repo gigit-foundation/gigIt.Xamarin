@@ -10,6 +10,7 @@ using FFImageLoading.Forms.Platform;
 using FFImageLoading.Svg.Forms;
 
 using gigIt.Xamarin.Forms;
+using XamForms = Xamarin.Forms;
 
 namespace gigIt.Xamarin.iOS
 {
@@ -30,6 +31,8 @@ namespace gigIt.Xamarin.iOS
         {
             CachedImageRenderer.Init();
             var ignore = typeof(SvgCachedImage);
+
+            XamForms.Forms.SetFlags("CollectionView_Experimental");
 
             var result = base.FinishedLaunching(app, options);
 

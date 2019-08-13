@@ -11,10 +11,14 @@ using Xamarin.Forms;
 using MvvmCross;
 using MvvmCross.Navigation;
 using MvvmCross.ViewModels;
+using System.Threading.Tasks;
 
 namespace gigIt.Xamarin.Forms.ViewModels
 {
-    public interface IAspectViewModel : IMvxViewModel { }
+    public interface IAspectViewModel : IMvxViewModel
+    {
+        //Task UserCreate();
+    }
 
     public class AspectViewModel : BaseViewModel, IAspectViewModel
     {
@@ -59,5 +63,10 @@ namespace gigIt.Xamarin.Forms.ViewModels
         }
 
         public IBloom Bloom { get; }
+
+        virtual public async Task UserCreate()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

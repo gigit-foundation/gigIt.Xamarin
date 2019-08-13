@@ -2,6 +2,7 @@
 using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Threading.Tasks;
+using System.Linq;
 
 using Xamarin.Forms;
 
@@ -11,6 +12,7 @@ using MvvmCross.Navigation;
 using gigIt.Xamarin.Forms.Views;
 using gigIt.Xamarin.Services;
 using gigIt.Model;
+using System.IO;
 
 namespace gigIt.Xamarin.Forms.ViewModels
 {
@@ -20,8 +22,11 @@ namespace gigIt.Xamarin.Forms.ViewModels
     {
         public IDataStore<Spark> DataStore => DependencyService.Get<IDataStore<Spark>>() ?? new MockSparksStore();
 
-        public ObservableCollection<SparkTileViewModel> Items { get; set; }
-        public Command LoadItemsCommand { get; set; }
+        public ObservableCollection<Spark> MySparks { get; } = new ObservableCollection<Spark>();
+        public ObservableCollection<Spark> Following { get; } = new ObservableCollection<Spark>();
+        public ObservableCollection<Spark> Hot { get; } = new ObservableCollection<Spark>();
+
+        public Command LoadItemsCommand { get; private set; }
 
         public SparksViewModel(IMvxNavigationService navigation, IBloom bloom) : base(navigation, bloom)
         {
@@ -30,17 +35,52 @@ namespace gigIt.Xamarin.Forms.ViewModels
             Title = "Sparks";
             TitleColor = gigItColors.gigitSpark;
 
-            Items = new ObservableCollection<SparkTileViewModel>();
             LoadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand());
 
             MessagingCenter.Subscribe<NewItemPage, Spark>(this, "AddItem", async (obj, item) =>
             {
                 var spark = item as Spark;
-                //var newItem = Mvx.IoCProvider.IoCConstruct<SparkTileViewModel>(spark);
-                var newItem = new SparkTileViewModel(spark);
-                Items.Add(newItem);
+                MySparks.Add(spark);
                 await DataStore.AddItemAsync(spark);
             });
+        }
+
+#region Properties
+
+        Spark _SelectedSpark;
+        public Spark SelectedSpark
+        {
+            get { return _SelectedSpark; }
+            set { SetProperty(ref _SelectedSpark, value); }
+        }
+
+        Spark _SelectedFollowing;
+        public Spark SelectedFollowing
+        {
+            get { return _SelectedFollowing; }
+            set { SetProperty(ref _SelectedFollowing, value); }
+        }
+
+        Spark _SelectedHot;
+        public Spark SelectedHot
+        {
+            get { return _SelectedHot; }
+            set { SetProperty(ref _SelectedHot, value); }
+        }
+
+#endregion
+
+        public override void ViewAppeared()
+        {
+            base.ViewAppeared();
+
+            ExecuteLoadItemsCommand();
+        }
+
+        public override Task UserCreate()
+        {
+            // navigate to create vm
+            return Task.CompletedTask;
         }
 
         async Task ExecuteLoadItemsCommand()
@@ -52,13 +92,11 @@ namespace gigIt.Xamarin.Forms.ViewModels
 
             try
             {
-                Items.Clear();
+                MySparks.Clear();
                 var items = await DataStore.GetItemsAsync(true);
-                foreach (var spark in items)
+                foreach (var spark in items) // .Where(s => s.SparkType == SparkType.)
                 {
-                    //var tile = Mvx.IoCProvider.IoCConstruct<SparkTileViewModel>(spark);
-                    var tile = new SparkTileViewModel(spark);
-                    Items.Add(tile);
+                    MySparks.Add(spark);
                 }
             }
             catch (Exception ex)

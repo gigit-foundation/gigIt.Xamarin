@@ -14,6 +14,7 @@ using FFImageLoading.Forms.Platform;
 using FFImageLoading.Svg.Forms;
 
 using gigIt.Xamarin.Forms;
+using XamForms = Xamarin.Forms;
 
 namespace gigIt.Xamarin.Droid
 {
@@ -27,6 +28,8 @@ namespace gigIt.Xamarin.Droid
 
             CachedImageRenderer.Init(true);
             var ignore = typeof(SvgCachedImage);
+
+            XamForms.Forms.SetFlags("CollectionView_Experimental");
 
             base.OnCreate(savedInstanceState);
         }

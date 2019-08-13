@@ -20,30 +20,5 @@ namespace gigIt.Xamarin.Forms.Views
         {
             InitializeComponent();
         }
-
-        async void OnItemSelected(object sender, SelectedItemChangedEventArgs args)
-        {
-            var item = args.SelectedItem as Spark;
-            if (item == null)
-                return;
-
-            await Navigation.PushAsync(new ItemDetailPage(new SparkTileViewModel(item)));
-
-            // Manually deselect item.
-            ItemsListView.SelectedItem = null;
-        }
-
-        async void AddItem_Clicked(object sender, EventArgs e)
-        {
-            await Navigation.PushModalAsync(new NavigationPage(new NewItemPage()));
-        }
-
-        protected override void OnAppearing()
-        {
-            base.OnAppearing();
-
-            if (ViewModel.Items.Count == 0)
-                ViewModel.LoadItemsCommand.Execute(null);
-        }
     }
 }

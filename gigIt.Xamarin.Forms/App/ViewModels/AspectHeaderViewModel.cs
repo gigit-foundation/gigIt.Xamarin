@@ -15,34 +15,24 @@ namespace gigIt.Xamarin.Forms.ViewModels
         }
 
         public AspectViewModel Aspect { get; }
-        public IMvxCommand ToggleFilters => new MvxCommand(() =>
+        public IMvxCommand ToggleAdmin => new MvxCommand(() =>
         {
-            ShowFilters = !ShowFilters;
-            ShowCreate = false;
+            ShowAdmin = !ShowAdmin;
         });
-        public IMvxCommand ToggleCreate => new MvxCommand(() =>
+        public IMvxCommand TapCreate => new MvxCommand(async () =>
         {
-            ShowCreate = !ShowCreate;
-            ShowFilters = false;
+            await Aspect.UserCreate();
         });
         public IMvxCommand GetSearchResults => new MvxCommand(() =>
         {
         });
 
-        bool _ShowFilters = false;
-        public bool ShowFilters
+        bool _ShowAdmin = false;
+        public bool ShowAdmin
         {
-            get { return _ShowFilters; }
-            set { SetProperty(ref _ShowFilters, value); }
+            get { return _ShowAdmin; }
+            set { SetProperty(ref _ShowAdmin, value); }
         }
-
-        bool _ShowCreate = false;
-        public bool ShowCreate
-        {
-            get { return _ShowCreate; }
-            set { SetProperty(ref _ShowCreate, value); }
-        }
-
 
         string _SearchText;
         public string SearchText
