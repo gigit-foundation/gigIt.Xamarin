@@ -16,10 +16,12 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <v:AspectHeaderView BindingContext="{Binding Header}"/>
-        <ScrollView Grid.Row="1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
-            <StackLayout Spacing="0">
+        <ScrollView Grid.Row="1"
+                    HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
+                    >
+            <StackLayout>
                 <!--My Sparks-->
-                <StackLayout HeightRequest="150" BackgroundColor="AliceBlue">
+                <StackLayout HeightRequest="150" Spacing="0">
                     <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand"
                                  BackgroundColor="{Static g:gigItColors.bodyBG}">
                         <ctrls:gigItIconButton WidthRequest="40" BackgroundColor="Transparent"
@@ -31,12 +33,11 @@
                                          Text="My Sparks" TextColor="{Static g:gigItColors.bodyFG}" FontSize="Small"
                                          VerticalTextAlignment="End" HorizontalTextAlignment="Center"/>
                     </StackLayout>
-                    <v:SparkCollectionView BackgroundColor="{Static g:gigItColors.bodyBG}"
-                                           SelectionMode="Single" SelectedItem="{Binding SelectedSpark}"
+                    <v:SparkCollectionView SelectionMode="Single" SelectedItem="{Binding SelectedSpark}"
                                            ItemsSource="{Binding MySparks}" ItemsLayout="HorizontalList"/>
                 </StackLayout>
                 <!--Following-->
-                <StackLayout HeightRequest="150" BackgroundColor="AliceBlue">
+                <StackLayout HeightRequest="150" Spacing="0">
                     <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand"
                                  BackgroundColor="{Static g:gigItColors.bodyBG}">
                         <ctrls:gigItIconButton WidthRequest="40" BackgroundColor="Transparent"
@@ -48,12 +49,11 @@
                                          Text="Following" TextColor="{Static g:gigItColors.bodyFG}" FontSize="Small"
                                          VerticalTextAlignment="End" HorizontalTextAlignment="Center"/>
                     </StackLayout>
-                    <v:SparkCollectionView BackgroundColor="{Static g:gigItColors.bodyBG}"
-                                           SelectionMode="Single" SelectedItem="{Binding SelectedFollowing}"
+                    <v:SparkCollectionView SelectionMode="Single" SelectedItem="{Binding SelectedFollowing}"
                                            ItemsSource="{Binding Following}" ItemsLayout="HorizontalList"/>
                 </StackLayout>
                 <!--Hot-->
-                <StackLayout HeightRequest="150" BackgroundColor="AliceBlue">
+                <StackLayout HeightRequest="150" Spacing="0">
                     <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand"
                                  BackgroundColor="{Static g:gigItColors.bodyBG}">
                         <ctrls:gigItIconButton WidthRequest="40" BackgroundColor="Transparent"
@@ -65,8 +65,7 @@
                                          Text="Hot" TextColor="{Static g:gigItColors.bodyFG}" FontSize="Small"
                                          VerticalTextAlignment="End" HorizontalTextAlignment="Center"/>
                     </StackLayout>
-                    <v:SparkCollectionView BackgroundColor="{Static g:gigItColors.bodyBG}"
-                                           SelectionMode="Single" SelectedItem="{Binding SelectedHot}"
+                    <v:SparkCollectionView SelectionMode="Single" SelectedItem="{Binding SelectedHot}"
                                            ItemsSource="{Binding Hot}" ItemsLayout="HorizontalList"/>
                 </StackLayout>
             </StackLayout>
