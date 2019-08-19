@@ -22,7 +22,14 @@ namespace gigIt.Xamarin.Forms.ViewModels
     {
         public IDataStore<Spark> DataStore => DependencyService.Get<IDataStore<Spark>>() ?? new MockSparksStore();
 
-        public ObservableCollection<Spark> MySparks { get; } = new ObservableCollection<Spark>();
+        ObservableCollection<Spark> _MySparks;
+        public ObservableCollection<Spark> MySparks
+        {
+            get { return _MySparks; }
+            private set { SetProperty(ref _MySparks, value); }
+        }
+
+
         public ObservableCollection<Spark> Following { get; } = new ObservableCollection<Spark>();
         public ObservableCollection<Spark> Hot { get; } = new ObservableCollection<Spark>();
 
@@ -68,13 +75,13 @@ namespace gigIt.Xamarin.Forms.ViewModels
             set { SetProperty(ref _SelectedHot, value); }
         }
 
-#endregion
+        #endregion
 
-        public override void ViewAppeared()
+        public override async Task Initialize()
         {
-            base.ViewAppeared();
+            await base.Initialize();
 
-            ExecuteLoadItemsCommand();
+            await ExecuteLoadItemsCommand();
         }
 
         public override Task UserCreate()
@@ -92,12 +99,7 @@ namespace gigIt.Xamarin.Forms.ViewModels
 
             try
             {
-                MySparks.Clear();
-                var items = await DataStore.GetItemsAsync(true);
-                foreach (var spark in items) // .Where(s => s.SparkType == SparkType.)
-                {
-                    MySparks.Add(spark);
-                }
+                MySparks = new ObservableCollection<Spark>(await DataStore.GetItemsAsync(true));
             }
             catch (Exception ex)
             {
