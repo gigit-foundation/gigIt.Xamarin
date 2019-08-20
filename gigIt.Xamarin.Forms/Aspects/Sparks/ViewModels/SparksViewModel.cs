@@ -42,7 +42,7 @@ namespace gigIt.Xamarin.Forms.ViewModels
             Title = "Sparks";
             TitleColor = gigItColors.gigitSpark;
 
-            LoadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand());
+            LoadItemsCommand = new Command(async () => await LoadSparks());
 
             MessagingCenter.Subscribe<NewItemPage, Spark>(this, "AddItem", async (obj, item) =>
             {
@@ -75,13 +75,13 @@ namespace gigIt.Xamarin.Forms.ViewModels
             set { SetProperty(ref _SelectedHot, value); }
         }
 
-        #endregion
+#endregion
 
         public override async Task Initialize()
         {
             await base.Initialize();
 
-            await ExecuteLoadItemsCommand();
+            await LoadSparks();
         }
 
         public override Task UserCreate()
@@ -90,7 +90,7 @@ namespace gigIt.Xamarin.Forms.ViewModels
             return Task.CompletedTask;
         }
 
-        async Task ExecuteLoadItemsCommand()
+        async Task LoadSparks()
         {
             if (IsBusy)
                 return;

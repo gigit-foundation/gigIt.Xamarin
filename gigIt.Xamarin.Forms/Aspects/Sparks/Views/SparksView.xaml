@@ -17,27 +17,26 @@
         </Grid.RowDefinitions>
         <v:AspectHeaderView BindingContext="{Binding Header}"/>
         <ScrollView Grid.Row="1"
-                    HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
-                    >
+                    HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
             <StackLayout>
                 <!--My Sparks-->
-                <StackLayout HeightRequest="150" Spacing="0">
-                    <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand"
+                <StackLayout HeightRequest="250" Spacing="0">
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" HeightRequest="40"
                                  BackgroundColor="{Static g:gigItColors.bodyBG}">
                         <ctrls:gigItIconButton WidthRequest="40" BackgroundColor="Transparent"
                                                VerticalOptions="Center" HorizontalOptions="Start"
                                                Text="{Static g:gigItIcons.Tasks}" TextColor="{Static g:gigItColors.bodyFG}" FontSize="20"
                                                Command="{Binding ConfigMine}"/>
                         <ctrls:gigItLabel InputTransparent="True"  BackgroundColor="Transparent"
-                                         VerticalOptions="Center" HorizontalOptions="StartAndExpand"  Margin="0,2"
-                                         Text="My Sparks" TextColor="{Static g:gigItColors.bodyFG}" FontSize="Small"
-                                         VerticalTextAlignment="End" HorizontalTextAlignment="Center"/>
+                                          VerticalOptions="Center" HorizontalOptions="StartAndExpand" Margin="0,2"
+                                          Text="My Sparks" TextColor="{Static g:gigItColors.bodyFG}" FontSize="Small"
+                                          VerticalTextAlignment="End" HorizontalTextAlignment="Center"/>
                     </StackLayout>
                     <v:SparkCollectionView SelectionMode="Single" SelectedItem="{Binding SelectedSpark}"
                                            ItemsSource="{Binding MySparks}" ItemsLayout="HorizontalList"/>
                 </StackLayout>
                 <!--Following-->
-                <StackLayout HeightRequest="150" Spacing="0">
+                <StackLayout HeightRequest="250" Spacing="0">
                     <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand"
                                  BackgroundColor="{Static g:gigItColors.bodyBG}">
                         <ctrls:gigItIconButton WidthRequest="40" BackgroundColor="Transparent"
@@ -53,7 +52,7 @@
                                            ItemsSource="{Binding Following}" ItemsLayout="HorizontalList"/>
                 </StackLayout>
                 <!--Hot-->
-                <StackLayout HeightRequest="150" Spacing="0">
+                <StackLayout HeightRequest="250" Spacing="0">
                     <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand"
                                  BackgroundColor="{Static g:gigItColors.bodyBG}">
                         <ctrls:gigItIconButton WidthRequest="40" BackgroundColor="Transparent"
