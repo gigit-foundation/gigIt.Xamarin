@@ -8,9 +8,9 @@ using gigIt.Xamarin.Forms.ViewModels;
 namespace gigIt.Xamarin.Forms.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class GigsView : AspectView<GigsViewModel>
+    public partial class WorkView : AspectView<WorkViewModel>
     {
-        public GigsView()
+        public WorkView()
         {
             InitializeComponent();
         }

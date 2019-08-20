@@ -21,7 +21,7 @@ namespace gigIt.Xamarin.Forms
             Mvx.IoCProvider.ConstructAndRegisterSingleton<ISparksViewModel, SparksViewModel>();
             Mvx.IoCProvider.ConstructAndRegisterSingleton<ISkillsViewModel, SkillsViewModel>();
             Mvx.IoCProvider.ConstructAndRegisterSingleton<IPeopleViewModel, PeopleViewModel>();
-            Mvx.IoCProvider.ConstructAndRegisterSingleton<IGigsViewModel, GigsViewModel>();
+            Mvx.IoCProvider.ConstructAndRegisterSingleton<IWorkViewModel, WorkViewModel>();
             Mvx.IoCProvider.ConstructAndRegisterSingleton<IMarketViewModel, MarketViewModel>();
 
             //CreatableTypes()

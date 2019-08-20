@@ -43,7 +43,7 @@ namespace gigIt.Xamarin.Forms.ViewModels
         public IMvxCommand NavToSparks => new MvxCommand(() => NavToAspect<ISparksViewModel>());
         public IMvxCommand NavToSkills => new MvxCommand(() => NavToAspect<ISkillsViewModel>());
         public IMvxCommand NavToPeople => new MvxCommand(() => NavToAspect<IPeopleViewModel>());
-        public IMvxCommand NavToWork   => new MvxCommand(() => NavToAspect<IGigsViewModel>());
+        public IMvxCommand NavToWork   => new MvxCommand(() => NavToAspect<IWorkViewModel>());
         public IMvxCommand NavToMarket => new MvxCommand(() => NavToAspect<IMarketViewModel>());
 
         bool isOpen = false;
