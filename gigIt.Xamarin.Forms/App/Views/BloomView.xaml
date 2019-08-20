@@ -49,6 +49,11 @@
                                    Grid.Column="2" Grid.ColumnSpan="7"
                                    Grid.Row="0" Grid.RowSpan="2"
                                    Command="{Binding NavToSparks}"/>
+                <ctrls:gigItLabel  Grid.Column="2" Grid.ColumnSpan="7"
+                                   Grid.Row="0" Grid.RowSpan="2"
+                                   VerticalOptions="End" HorizontalOptions="Center"
+                                   FontSize="12" TextColor="{Static g:gigItColors.gigitSpark}"
+                                   Text="Sparks" />
                 <ctrls:gigItIconButton BackgroundColor="{Static g:gigItColors.headerBG}"
                                    VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"
                                    Text="{Static g:gigItIcons.Skills}" FontSize="{Binding IconSize}"
@@ -57,6 +62,11 @@
                                    Grid.Column="8" Grid.ColumnSpan="3"
                                    Grid.Row="1" Grid.RowSpan="3"
                                    Command="{Binding NavToSkills}"/>
+                <ctrls:gigItLabel  Grid.Column="8" Grid.ColumnSpan="3"
+                                   Grid.Row="1" Grid.RowSpan="3"
+                                   VerticalOptions="End" HorizontalOptions="Center"
+                                   FontSize="12" TextColor="{Static g:gigItColors.gigitWater}"
+                                   Text="Skills" />
                 <ctrls:gigItIconButton BackgroundColor="{Static g:gigItColors.headerBG}"
                                    VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"
                                    Text="{Static g:gigItIcons.Followers}" FontSize="{Binding IconSize}"
@@ -65,6 +75,11 @@
                                    Grid.Column="6" Grid.ColumnSpan="4"
                                    Grid.Row="5" Grid.RowSpan="2"
                                    Command="{Binding NavToPeople}"/>
+                <ctrls:gigItLabel  Grid.Column="6" Grid.ColumnSpan="4"
+                                   Grid.Row="5" Grid.RowSpan="2"
+                                   VerticalOptions="End" HorizontalOptions="Center"
+                                   FontSize="12" TextColor="{Static g:gigItColors.gigitLife}"
+                                   Text="People" />
                 <ctrls:gigItIconButton BackgroundColor="{Static g:gigItColors.headerBG}"
                                    VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"
                                    Text="{Static g:gigItIcons.Work}" FontSize="{Binding IconSize}"
@@ -73,6 +88,11 @@
                                    Grid.Column="1" Grid.ColumnSpan="4"
                                    Grid.Row="5" Grid.RowSpan="2"
                                    Command="{Binding NavToWork}"/>
+                <ctrls:gigItLabel  Grid.Column="1" Grid.ColumnSpan="4"
+                                   Grid.Row="5" Grid.RowSpan="2"
+                                   VerticalOptions="End" HorizontalOptions="Center"
+                                   FontSize="12" TextColor="{Static g:gigItColors.gigitEarth}"
+                                   Text="Work" />
                 <ctrls:gigItIconButton BackgroundColor="{Static g:gigItColors.headerBG}"
                                    VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"
                                    Text="{Static g:gigItIcons.Market}" FontSize="{Binding IconSize}"
@@ -81,6 +101,11 @@
                                    Grid.Column="0" Grid.ColumnSpan="3"
                                    Grid.Row="1" Grid.RowSpan="3"
                                    Command="{Binding NavToMarket}"/>
+                <ctrls:gigItLabel  Grid.Column="0" Grid.ColumnSpan="3"
+                                   Grid.Row="1" Grid.RowSpan="3"
+                                   VerticalOptions="End" HorizontalOptions="Center"
+                                   FontSize="12" TextColor="{Static g:gigItColors.gigitSky}"
+                                   Text="Market" />
                 <ctrls:gigItIconButton BackgroundColor="{Static g:gigItColors.headerBG}"
                                    VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"
                                    Text="{Static g:gigItIcons.Gigit}" FontSize="28"
