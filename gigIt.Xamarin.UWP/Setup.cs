@@ -12,10 +12,6 @@ namespace gigIt.Xamarin.UWP
 {
     public class Setup : MvxWindowsSetup
     {
-        public Setup(Frame rootFrame) : base(rootFrame)
-        {
-        }
-
         protected override IMvxApplication CreateApp()
         {
             return new UwpApp() as IMvxApplication;
